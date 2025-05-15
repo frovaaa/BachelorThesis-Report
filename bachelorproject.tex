@@ -4,6 +4,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{float}
 \usepackage{amsmath}
+\usepackage{todonotes}
+% \usepackage[disable]{todonotes} % Disables all TODOs
 
 %%% Main Body %%%
 
@@ -15,7 +17,7 @@
 
 \begin{committee}
 %With more than 1 advisor an error is raised...: only 1 advisor is allowed!
-\advisor[Istituto Dalle Molle di Studi sull\'Intelligenza Artificiale, IDSIA, Switzerland]{ }{Monica }{Landoni }
+\advisor[Istituto Dalle Molle di Studi sull\'Intelligenza Artificiale, IDSIA, Switzerland]{ }{Monica}{Landoni}
 %You can comment out  these lines if you don't have any assistant
 \coadvisor[Istituto Dalle Molle di Studi sull\'Intelligenza Artificiale, IDSIA, Switzerland]{ }{Antonio}{Paolillo}
 
@@ -33,70 +35,95 @@ You may include up to six keywords or phrases. Keywords should be separated with
 %\listoffigures\newpage
 
 \section{\textbf{Introduction}}
-Start writing your intro here. You can then use the following commands in your LaTeX document:
-\cite{label} To insert a citation where label is the label of a bibliographic entry in a .bib file. For instance:\cite{Hamari}\\
+\todo[inline]{Will rewrite when working on the abstract, need to write about already existing tools. Currently, this is a mixup of the abstract and the introduction.}
+
+Social robots are increasingly finding their way into learning environments, where their role as collaborators, tutors, or learning companions is being actively explored. In particular, the paradigm of \textit{Learning by Teaching} (LbT) offers a promising framework in which children can reinforce their understanding and social-emotional skills by teaching a robot. This approach has the potential to enhance engagement, improve soft skills, and support inclusive education.
+
+This bachelor project is part of the broader TESORO initiative, for which an SNSF funding application has been submitted and is currently awaiting approval. My contribution focuses on a practical implementation: the design and development of a web-based dashboard that enables a Wizard-of-Oz control of a social robot during an exploratory experiment involving turn-taking with children.
+
+The experiment consists of a Lego-building task performed by two children taking turns. The robot, remotely controlled via the dashboard, intervenes when turn-taking violations occur, aiming to regulate the interaction and reinforce collaborative behavior.
+
+This report presents the background of the project, the research and implementation goals, the technical architecture of the system, and the planned experimental study.
+The developed dashboard serves as a starting point for preliminary studies and lays the groundwork for later stages of the TESORO project where the robot will learn these regulatory behaviors from various operators, including researchers, teachers, or even the children themselves. Additionally, it could also serve other projects that are based on Human-Robot Interaction (HRI) since it will be developed in a way that is re-usable for different scenarios.
+
+\subsection{\textbf{Report structure}}
+The rest of the report is organized as follows: Section~\ref{sec:background} presents the related work and theoretical framework; Section~\ref{sec:design} outlines the experiment scenario and research goals; Section~\ref{sec:system} describes the dashboard's architecture and implementation; Section~\ref{sec:evaluation} discusses the system's current status and outlines the upcoming evaluation; and Section~\ref{sec:conclusions} concludes with future directions.
 
 
+\section{\textbf{State of the art}}\label{sec:background}
+\todo[inline]{Here we will summarize the main findings, carefully explain the differences with our work and could have a small "background information" section.}
+\textit{
+    Explain all acronyms and abbreviations. For example, the first time an acronym is used, write it out in full and place the acronym in
+    parentheses. When using the Graphical User Interface (GUI) version, the use may...
+}
 
 
-\section{\textbf{Background}}
-\subsection{\textbf{subsections}}
-Explain all acronyms and abbreviations. For example, the first time an acronym is used, write it out in full and place the acronym in
-parentheses. When using the Graphical User Interface (GUI) version, the use may...
+\section{\textbf{Experiment Design and Goals}}\label{sec:design}
 
-
-
-\section{\textbf{Approach}}
-\subsection{\textbf{The main idea}}
-Some of the various techniques are listed below:
+The experiment designed for this project aims to explore how a social robot can support children's learning through turn-taking regulation. The overall investigation is structured into three progressive stages:
 
 \begin{itemize}
-    \item tech 1
-    \item tech 2
+    \item \textbf{Step 1: Robot as Regulator} - Two children collaboratively build a Lego tower by taking turns. The robot observes and intervenes in case of turn violations, using multimodal cues such as LED lights, vocalizations, and gestures.
+    \item \textbf{Step 2: Child as Regulator} - A child is tasked with regulating the interactions between the robot and another child that will perform a similar task to Step 1. This step exploits the LbT paradigm, where the regulator learns how to collaborate and keep turns.
+    \item \textbf{Step 3: Robot Learns How and When to Intervene} - The robot applies the learned behavior during interactions with children in Step 1 and Step 2.
 \end{itemize}
 
-\noindent You may write the formulas as follows:
-
-\begin{equation}
-    \phi(n) = (p-1) \cdot (q-1)\\
-\end{equation}
+This report provides the foundational knowledge for implementing later stages of autonomous learning. The robot's interventions are controlled via a Wizard-of-Oz setup, and the primary goal is to assess the feasibility and effectiveness of such interventions in developing children's soft skills.
 
 
+\section{\textbf{System Design and Implementation}}\label{sec:system}
+
+The dashboard system is a web-based interface that communicates with a ROS2 backend to control a DJI RoboMaster EP robot. It allows an operator (e.g., a teacher or researcher) to remotely trigger predefined robot actions such as:
+
+\begin{itemize}
+    \item Moving to a child-facing position.
+    \item Moving to the original position.
+    \item Multimodal predefined interventions (e.g., LED lights, vocalizations, gestures).
+\end{itemize}
+
+\subsection{\textbf{System Architecture}}
+\todo[inline]{Will expand this section with more detailed information about the architecture.}
+The architecture is composed of:
+\begin{itemize}
+    \item A frontend user interface implemented with modern web technologies.
+    \item A backend service that translates UI commands into ROS2 messages.
+    \item ROS2 nodes running on a local machine that will communicate with the robot making it perform the requested actions.
+\end{itemize}
+
+\subsection{\textbf{Wizard-of-Oz Control}}
+The operator acts as the decision-maker, interpreting children's behavior and triggering interventions through the dashboard. The interface is designed to be simple, fast, and intuitive, ensuring minimal latency between observation and action.
+
+\subsection{\textbf{Safety Considerations}}
+Movement commands are speed-limited to ensure child safety.
 
 
-To insert a figure use the following command:
+\section{\textbf{Evaluation and Current Status}}\label{sec:evaluation}
 
-\begin{figure}[h!]
-    \center{\includegraphics[scale=0.03 ]
-        {figures/flower.jpg}}
-    \caption{The caption of my figure}\label{fig:flower}
-\end{figure}
+The current implementation of the dashboard is functional and has been tested with the DJI RoboMaster EP robot. It successfully supports all necessary actions for the experiment.
 
+A pilot study is planned where the dashboard will be used to conduct an initial session of the Lego tower-building task with two children. The operator will use the dashboard to regulate turn-taking behavior. Key observations will include:
+\begin{itemize}
+    \item Effectiveness of the robot's interventions.
+    \item Children's responsiveness to the robot.
+    \item Ease of use of the dashboard by the operator.
+\end{itemize}
 
+These observations will guide the refinement of both the experiment protocol and the dashboard interface.
 
-
-\section{\textbf{Evaluation}}
-\subsection{\textbf{Results}}
-The experimental result goes here ... \footnote{https://www.usi.ch}. \\
-
-
-
-
-
+\todo[inline]{Will edit this section after the pilot study.}
 
 
 \newpage
-\section{\textbf{Future work}}
 
-\section{\textbf{Summary}}
-Future works goes here.
+\section{\textbf{Conclusions}}\label{sec:conclusions}
+This project presents the design and implementation of a web-based dashboard to enable Wizard-of-Oz control of a social robot used in a Learning by Teaching experiment with children. The system is part of the larger TESORO initiative and lays the groundwork for studying how social robots can assist in learning soft skills like turn-taking.
 
+\subsection{\textbf{Future Work}}
+\todo[inline]{
+    Here we will write about future work like the ones mentioned in the TESORO project proposal like :
+    Long-term goal: enabling real-time learning from the child's regulatory actions and shifting toward semi-autonomous robot behavior.
+}
 
-
-
-
-
-\newpage
 
 %%%%% BIBLIOGRAPHY %%%%%
 \bibliographystyle{abbrv}
