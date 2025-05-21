@@ -6,6 +6,8 @@
 \usepackage{amsmath}
 \usepackage{todonotes}
 % \usepackage[disable]{todonotes} % Disables all TODOs
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
 
 %%% Main Body %%%
 
@@ -126,6 +128,48 @@ When activated, the command is sent via the ROS2 communication layer to the safe
 This feature is essential for experiments involving children, as it provides the operator with immediate control to prevent unintended or unsafe robot behavior.
 The system was tested to ensure that the emergency stop reliably overrides all other commands and brings the robot to a safe state.
 
+\subsection{\textbf{System Architecture Diagram}}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[
+            node distance=2.5cm and 2.5cm,
+            every node/.style={font=\small, align=center},
+            box/.style={draw, rounded corners, minimum width=2.8cm, minimum height=1.2cm, fill=gray!10},
+            arrow/.style={-Latex, thick}
+        ]
+
+        % Nodes
+        \node[box] (dashboard) {Web Dashboard\\ (Next.js + roslibjs)};
+        \node[box, below=of dashboard] (middleware) {Middleware Server\\ (Express + rclnodejs)};
+        \node[box, below=of middleware] (rosbridge) {ROS Communication Layer\\ (rosbridge\_server)};
+        \node[box, below=of rosbridge] (ubuntu) {Ubuntu Machine\\ (ROS2 Nodes \&\\ Action Servers)};
+        \node[box, below=of ubuntu] (robot) {RoboMaster EP\\ Robot};
+
+        % Connections
+        \draw[arrow] (dashboard) -- node[right] {REST (POST)} (middleware);
+        \draw[arrow] (middleware) -- node[right] {ROS2 Actions} (rosbridge);
+        \draw[arrow] (rosbridge) -- node[right] {ROS2 Messages} (ubuntu);
+        \draw[arrow] (ubuntu) -- node[right] {Wi-Fi / Access Point} (robot);
+
+        % Direct connection from dashboard to ubuntu (ROS2 Nodes)
+        \draw[arrow, dashed, blue] (dashboard.south east) to[out=-10,in=30] node[right, xshift=2mm, yshift=-2mm, text=blue] {Direct WebSocket to\\ROS2 Nodes} (rosbridge.north east);
+
+        % Emergency stop
+        \node[box, left=4.5cm of rosbridge] (safety) {Safety Node\\ (Emergency Stop)};
+        \draw[arrow, thick, red] (dashboard) -- node[above left, xshift=-2mm, yshift=2mm, text=red] {Emergency Stop} (safety);
+        \draw[arrow, thick, red] (safety) -- (rosbridge);
+
+    \end{tikzpicture}
+    \caption{System architecture for Wizard-of-Oz control of the RoboMaster EP robot. The dashboard communicates with the middleware server via REST (POST request), and can also communicate directly with the ROS2 nodes using WebSocket (roslibjs).}
+    \label{fig:system-architecture}
+\end{figure}
+
+\subsection{\textbf{Dashboard Interface}}
+\todo[inline]{
+    Here we will describe the dashboard interface, including the main features and functionalities.
+    We will also include screenshots of the dashboard to illustrate its design and layout.
+}
 
 \section{\textbf{Evaluation and Current Status}}\label{sec:evaluation}
 
@@ -141,24 +185,36 @@ A pilot study is planned where the dashboard will be used to conduct an initial 
 These observations will guide the refinement of both the experiment protocol and the dashboard interface.
 
 \subsection{\textbf{Walkthrough with Experts}}
-\subsection*{Setup and procedure}
-\subsection*{Key observations}
-\subsection*{Design implications}
+\subsection*{\textbf{Setup and procedure}}
+-
+\subsection*{\textbf{Key observations}}
+-
+\subsection*{\textbf{Design implications}}
+-
 
 \subsection{\textbf{Walkthrough with High School Students}}
-\subsection*{Setup and procedure}
-\subsection*{Key observations}
-\subsection*{Design implications}
+\subsection*{\textbf{Setup and procedure}}
+-
+\subsection*{\textbf{Key observations}}
+-
+\subsection*{\textbf{Design implications}}
+-
 
 \subsection{\textbf{Pilot with Children}}
-\subsection*{Setup and procedure}
-\subsection*{Key observations}
-\subsection*{Design implications}
+\subsection*{\textbf{Setup and procedure}}
+-
+\subsection*{\textbf{Key observations}}
+-
+\subsection*{\textbf{Design implications}}
+-
 
 \subsection{\textbf{Summary of Key Iterative Changes}}
 
 
-\todo[inline]{Will edit this section after the pilot study.}
+\todo[inline]{
+    Here we will summarize the key changes made to the dashboard based on the feedback received from the walkthroughs and pilot study.
+    This section will highlight the iterative design process and how user feedback informed the development of the system.
+}
 
 
 \newpage
