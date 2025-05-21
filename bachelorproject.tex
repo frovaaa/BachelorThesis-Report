@@ -73,25 +73,18 @@ This report provides the foundational knowledge for implementing later stages of
 
 \section{\textbf{System Design and Implementation}}\label{sec:system}
 
-The dashboard system is a web-based interface that communicates with a ROS2 backend to control a DJI RoboMaster EP robot. It allows an operator (e.g., a teacher or researcher) to remotely trigger predefined robot actions such as:
-
-\begin{itemize}
-    \item Moving to a child-facing position.
-    \item Moving to the original position.
-    \item Multimodal predefined interventions (e.g., LED lights, vocalizations, gestures).
-\end{itemize}
-
 \subsection{\textbf{System Architecture}}
-\todo[inline]{Will expand this section with more detailed information about the architecture.}
-The architecture is composed of:
-\begin{itemize}
-    \item A frontend user interface implemented with modern web technologies.
-    \item A backend service that translates UI commands into ROS2 messages.
-    \item ROS2 nodes running on a local machine that will communicate with the robot making it perform the requested actions.
-\end{itemize}
+\subsection*{Overview}
+The system architecture was designed to enable an operator to control a social robot in a Wizard-of-Oz fashion during experiments with children.
+The main components include a web-based dashboard for real-time control~\cite{frovaaa2025hogwarts}, a communication layer based on ROS2~\cite{frovaaa2025robomaster, frovaaa2025robomasterhri}, and the RoboMaster EP robot~\cite{djirobomasterep}.
+The dashboard provides intuitive controls for triggering robot interventions and monitoring status, while the ROS2 integration ensures reliable communication and execution of commands.
+This architecture prioritizes usability, low latency, and safety, supporting the experimental requirements for responsive and effective interactions.
+The system was designed to facilitate iterative development and easy modifications, supporting a co-design approach as outlined in the TESORO project proposal~\cite{landoni2025tesoro}.
+This flexibility enables rapid adaptation of the dashboard based on feedback from stakeholders and participants during the study.
 
-\subsection{\textbf{Wizard-of-Oz Control}}
-The operator acts as the decision-maker, interpreting children's behavior and triggering interventions through the dashboard. The interface is designed to be simple, fast, and intuitive, ensuring minimal latency between observation and action.
+
+% \subsection{\textbf{Wizard-of-Oz Control}}
+% The operator acts as the decision-maker, interpreting children's behavior and triggering interventions through the dashboard. The interface is designed to be simple, fast, and intuitive, ensuring minimal latency between observation and action.
 
 \subsection{\textbf{Safety Considerations}}
 Movement commands are speed-limited to ensure child safety.
