@@ -74,20 +74,57 @@ This report provides the foundational knowledge for implementing later stages of
 \section{\textbf{System Design and Implementation}}\label{sec:system}
 
 \subsection{\textbf{System Architecture}}
-\subsection*{Overview}
+\subsection*{\textbf{Overview}}
 The system architecture was designed to enable an operator to control a social robot in a Wizard-of-Oz fashion during experiments with children.
-The main components include a web-based dashboard for real-time control~\cite{frovaaa2025hogwarts}, a communication layer based on ROS2~\cite{frovaaa2025robomaster, frovaaa2025robomasterhri}, and the RoboMaster EP robot~\cite{djirobomasterep}.
+The main components include a web-based dashboard for real-time control~\cite{frovaaa2025hogwarts}, a communication layer based on ROS2 (Robot Operating System 2)~\cite{ros2, frovaaa2025robomaster, frovaaa2025robomasterhri}, and the RoboMaster EP robot~\cite{djirobomasterep}.
 The dashboard provides intuitive controls for triggering robot interventions and monitoring status, while the ROS2 integration ensures reliable communication and execution of commands.
 This architecture prioritizes usability, low latency, and safety, supporting the experimental requirements for responsive and effective interactions.
 The system was designed to facilitate iterative development and easy modifications, supporting a co-design approach as outlined in the TESORO project proposal~\cite{landoni2025tesoro}.
 This flexibility enables rapid adaptation of the dashboard based on feedback from stakeholders and participants during the study.
 
+\subsection{\textbf{Component Description}}
+\subsubsection*{\textbf{Dashboard}}
+The dashboard is a web-based interface developed using Next.js, with the user interface built on Material UI (MUI) components for a modern and consistent look.
+It allows the operator to monitor the robot's status and trigger interventions in real time. Communication with the robot is achieved via \texttt{roslibjs}~\cite{roslibjs}, which enables the dashboard to send and receive ROS messages over the network.
 
-% \subsection{\textbf{Wizard-of-Oz Control}}
-% The operator acts as the decision-maker, interpreting children's behavior and triggering interventions through the dashboard. The interface is designed to be simple, fast, and intuitive, ensuring minimal latency between observation and action.
+\subsubsection*{\textbf{Middleware Server}}
+Due to a known limitation in \texttt{roslibjs} when interacting with ROS2 action servers, a minimal middleware server was implemented within the dashboard system.
+This server is built with Express and uses \texttt{rclnodejs}~\cite{rclnodejs} to interface directly with ROS2, acting as a bridge between the dashboard and ROS2 action servers.
+This ensures reliable execution of complex robot actions and exposes additional functionalities to the web interface.
+
+\subsubsection*{\textbf{ROS Communication Layer}}
+The communication layer is based on ROS2 and uses \texttt{rosbridge\_server}~\cite{rosbridge} running on the Ubuntu machine that controls the robot ROS2 drivers.
+This layer handles the communication between the dashboard and the robot, allowing for real-time updates and command execution.
+
+\subsubsection*{\textbf{Robot Control and Action Servers}}
+The Ubuntu machine runs several ROS2 nodes and action servers, including:
+\begin{itemize}
+    \item \texttt{robomaster\_ros}~\cite{frovaaa2025robomaster}: ROS2 drivers for the RoboMaster EP robot, providing low-level control and sensor access.
+    \item \texttt{robomaster\_hri}~\cite{frovaaa2025robomasterhri}: Custom packages for high-level robot control and human-robot interaction.
+    \item Security and safety action servers: Allow the operator to immediately halt robot actions or trigger safety protocols as needed.
+\end{itemize}
+
+\subsubsection*{\textbf{RoboMaster EP Robot}}
+The RoboMaster EP robot~\cite{djirobomasterep} is the physical platform used for the experiment.
+It connects to the Ubuntu machine via its dedicated access point, ensuring a stable and isolated communication channel.
+The robot executes commands received from the ROS2 action servers and ROS2 nodes, and provides feedback to the dashboard.
+
+
+\subsubsection*{\textbf{Network and Deployment}}
+All components are deployed on a local network to ensure low latency and reliability.
+The dashboard can be accessed from any device on the network, while the Ubuntu machine acts as the central hub for ROS2 communication and robot control.
+Since the RoboMaster EP robot connects wirelessly and provides odometry data, the system is not restricted to a laboratory setting.
+This flexibility allows experiments and interactions with children to take place in more neutral or familiar environments, which can be beneficial for naturalistic studies and participant comfort.
 
 \subsection{\textbf{Safety Considerations}}
-Movement commands are speed-limited to ensure child safety.
+Ensuring the safety of participants and equipment was a primary concern throughout the system design.
+To address this, a dedicated ROS2 node was developed to act as an emergency stop mechanism.
+This node can immediately halt all ongoing robot actions and stop the RoboMaster EP's motors.
+
+A prominent "Emergency Stop" button is integrated into the dashboard interface, allowing the operator to trigger this safety mechanism at any time during an experiment.
+When activated, the command is sent via the ROS2 communication layer to the safety node running on the Ubuntu machine, ensuring a rapid response.
+This feature is essential for experiments involving children, as it provides the operator with immediate control to prevent unintended or unsafe robot behavior.
+The system was tested to ensure that the emergency stop reliably overrides all other commands and brings the robot to a safe state.
 
 
 \section{\textbf{Evaluation and Current Status}}\label{sec:evaluation}
