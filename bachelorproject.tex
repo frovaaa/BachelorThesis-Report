@@ -320,7 +320,7 @@ The session followed the same structure as previous walkthroughs but was run wit
 This section summarizes the major interface iterations informed by each evaluation session.
 Screenshots of each version are included to illustrate the progression from the initial prototype to the final deployed interface.
 
-\subsubsection*{Version 1 - Initial Prototype}
+\subsubsection*{\textbf{Version 1 - Initial Prototype}}
 \begin{itemize}
     \item Basic joystick and pre-defined movement controls.
     \item Minimal bad-behavior feedback capabilities (red LED, spin, sound).
@@ -333,7 +333,7 @@ Screenshots of each version are included to illustrate the progression from the 
     \label{fig:dashboard-v1}
 \end{figure}
 
-\subsubsection*{Version 2 - Post Expert Walkthrough}
+\subsubsection*{\textbf{Version 2 - Post Expert Walkthrough}}
 \begin{itemize}
     \item Added gripper controls and advanced LED configuration (colors, blink timing, speed).
     \item Introduced feedback modes: positive and negative with scalable intensity.
@@ -348,7 +348,7 @@ Screenshots of each version are included to illustrate the progression from the 
     \label{fig:dashboard-v2}
 \end{figure}
 
-\subsubsection*{Version 3 - Final Version for Pilot Study}
+\subsubsection*{\textbf{Version 3 - Final Version for Pilot Study}}
 \begin{itemize}
     \item Further expanded LED signaling options for color-specific communication.
     \item Audio feedback support for positive cues only.
@@ -360,6 +360,25 @@ Screenshots of each version are included to illustrate the progression from the 
     \caption{Version 3 - Final dashboard interface used in the pilot experiment.}
     \label{fig:dashboard-v3}
 \end{figure}
+
+\subsubsection*{\textbf{Co-Design of Robot Behavior}}
+
+Beyond interface adjustments, each walkthrough also shaped our understanding of effective robot behaviors in child-facing settings.
+Feedback from participants informed refinements in how the robot expresses negative vs. positive cues, how it maintains neutrality, and how children interpret its social role.
+Key insights included:
+
+\begin{itemize}
+    \item \textbf{Framing of the Robot:} Children consistently perceived the robot as a playful companion or pet, rather than an authority figure.
+          This influenced design decisions toward peer-like, non-disciplinary behaviors.
+    \item \textbf{Feedback Intensity:} Both experts and children emphasized the importance of scalable, multimodal feedback (e.g., lights + movement + sound), especially for positive interactions.
+          Negative feedback should remain neutral and minimal to avoid encouraging misbehavior.
+    \item \textbf{Social Engagement:} Naming the robot, petting it, and attributing personality to it emerged naturally, suggesting personalization features may enhance engagement.
+    \item \textbf{Learning by Teaching:} Children actively guided the robot using verbal and physical cues, validating the LbT framing.
+          Tasks like teaching the robot to maintain distance or follow polite commands proved intuitive and effective.
+    \item \textbf{Emotion and Context Awareness:} Middle school students suggested that robots should use emotional cues, facial expressions, and context to decide how and when to interact.
+\end{itemize}
+
+These behavioral reflections informed the structure of robot actions available through the dashboard and laid the groundwork for future development of semi-autonomous and emotionally aware systems.
 
 \newpage
 
