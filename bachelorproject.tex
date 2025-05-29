@@ -65,7 +65,7 @@ The rest of the report is organized as follows: Section~\ref{sec:background} pre
 The experiment designed for this project aims to explore how a social robot can support children's learning through turn-taking regulation. The overall investigation is structured into three progressive stages:
 
 \begin{itemize}
-    \item \textbf{Step 1: Robot as Regulator} - Two children collaboratively build a Lego tower by taking turns. The robot observes and intervenes in case of turn violations, using multimodal cues such as LED lights, vocalizations, and gestures.
+    \item \textbf{Step 1: Robot as Regulator} - Two children collaboratively build a Lego tower by taking turns. The robot observes and intervenes in case of turn violations or inappropriate behavior, using multimodal cues such as LED lights, vocalizations, and gestures.
     \item \textbf{Step 2: Child as Regulator} - A child is tasked with regulating the interactions between the robot and another child that will perform a similar task to Step 1. This step exploits the LbT paradigm, where the regulator learns how to collaborate and keep turns.
     \item \textbf{Step 3: Robot Learns How and When to Intervene} - The robot applies the learned behavior during interactions with children in Step 1 and Step 2.
 \end{itemize}
@@ -167,22 +167,21 @@ The system was tested to ensure that the emergency stop reliably overrides all o
 
 \subsection{\textbf{Dashboard Interface}}
 \todo[inline]{
-    Here we will describe the dashboard interface, including the main features and functionalities.
+    Here we will describe the final dashboard interface, including the main features and functionalities.
     We will also include screenshots of the dashboard to illustrate its design and layout.
 }
 
-\section{\textbf{Evaluation and Current Status}}\label{sec:evaluation}
+\section{\textbf{Evaluation and Iterative Co-Design}}\label{sec:evaluation}
+This section presents the evaluation of the system through three exploratory sessions, each structured as an iterative walkthrough.
+These sessions aimed to assess the usability and flexibility of the dashboard, understand the dynamics of child-robot interaction, and collect feedback to inform the design of both the interface and the robot's behavior.
+Each evaluation contributed to the co-design process by revealing user needs and contextual challenges in real time.
 
-The current implementation of the dashboard is functional and has been tested with the DJI RoboMaster EP robot. It successfully supports all necessary actions for the experiment.
+The sessions included:
+(1) a walkthrough with HCI and accessibility experts, who role-played as elementary or middle school students;
+(2) a session with high school students working in pairs and simulating collaborative behavior on the shared floor mat; and
+(3) a pilot study with middle school children, which evolved into a semi-structured discussion and informal walkthrough focusing on robot behavior and social interaction patterns.
 
-A pilot study is planned where the dashboard will be used to conduct an initial session of the Lego tower-building task with two children. The operator will use the dashboard to regulate turn-taking behavior. Key observations will include:
-\begin{itemize}
-    \item Effectiveness of the robot's interventions.
-    \item Children's responsiveness to the robot.
-    \item Ease of use of the dashboard by the operator.
-\end{itemize}
-
-These observations will guide the refinement of both the experiment protocol and the dashboard interface.
+The following subsections describe the setup, key observations, and design implications of each session, followed by a summary of the iterative changes implemented in response to user feedback.
 
 \subsection{\textbf{Walkthrough with Experts}}
 \subsection*{\textbf{Setup and procedure}}
@@ -200,7 +199,7 @@ These observations will guide the refinement of both the experiment protocol and
 \subsection*{\textbf{Design implications}}
 -
 
-\subsection{\textbf{Pilot with Children}}
+\subsection{\textbf{Walkthrough with Middle School Students}}
 \subsection*{\textbf{Setup and procedure}}
 -
 \subsection*{\textbf{Key observations}}
