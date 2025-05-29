@@ -14,7 +14,7 @@
 \author{Davide Frova}
 
 \title{\textbf{Exploring the Learning by Teaching with Social Robots}}
-\subtitle{Enabling Exploratory Studies on Learning by Teaching with Social Robots through Wizard-of-Oz Control}
+\subtitle{Exploratory Studies on Learning by Teaching with Social Robots using Wizard-of-Oz Control}
 \versiondate{\today}
 
 \begin{committee}
@@ -314,14 +314,52 @@ The session followed the same structure as previous walkthroughs but was run wit
     \item An on-device interface could support more direct, child-driven interaction with the robot and enhance mutual understanding.
     \item The co-design insights collected during this session support the idea of tailoring robot behavior based not only on task logic but on social context and emotional interpretation.
 \end{itemize}
+
 \subsection{\textbf{Summary of Key Iterative Changes}}
 
+This section summarizes the major interface iterations informed by each evaluation session.
+Screenshots of each version are included to illustrate the progression from the initial prototype to the final deployed interface.
 
-\todo[inline]{
-    Here we will summarize the key changes made to the dashboard based on the feedback received from the walkthroughs and pilot study.
-    This section will highlight the iterative design process and how user feedback informed the development of the system.
-}
+\subsubsection*{Version 1 - Initial Prototype}
+\begin{itemize}
+    \item Basic joystick and pre-defined movement controls.
+    \item Minimal bad-behavior feedback capabilities (red LED, spin, sound).
+    \item No dedicated gripper control (box could only be opened/closed by moving the arm); no feedback intensity levels.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/dashboard_v1.png}
+    \caption{Version 1 - Initial prototype with limited robot control and feedback options.}
+    \label{fig:dashboard-v1}
+\end{figure}
 
+\subsubsection*{Version 2 - Post Expert Walkthrough}
+\begin{itemize}
+    \item Added gripper controls and advanced LED configuration (colors, blink timing, speed).
+    \item Introduced feedback modes: positive and negative with scalable intensity.
+    \item Refined movement control and added panic button.
+    \item Macro-scenarios for quick intervention.
+    \item UI layout was reorganized into functional panels or "zones" to streamline operator access to robot features.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/dashboard_v2.png}
+    \caption{Version 2 - Refined interface after expert feedback, supporting greater flexibility.}
+    \label{fig:dashboard-v2}
+\end{figure}
+
+\subsubsection*{Version 3 - Final Version for Pilot Study}
+\begin{itemize}
+    \item Further expanded LED signaling options for color-specific communication.
+    \item Audio feedback support for positive cues only.
+    \item Increased the size and visual prominence of the panic button to improve operator responsiveness during high-pressure scenarios.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/todo.png}
+    \caption{Version 3 - Final dashboard interface used in the pilot experiment.}
+    \label{fig:dashboard-v3}
+\end{figure}
 
 \newpage
 
