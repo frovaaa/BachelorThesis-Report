@@ -316,7 +316,7 @@ The session followed the same structure as previous walkthroughs but was run wit
 \end{itemize}
 
 
-\subsection{\textbf{Summary of Key Iterative Changes}}
+\subsection{\textbf{Summary of Iterative Design Changes}}
 
 This section summarizes the key iterative changes that shaped both the dashboard interface and the robot's behavior across the three evaluation sessions.
 Each walkthrough revealed new user needs and inspired concrete refinements.
@@ -364,29 +364,38 @@ Screenshots of the evolving interface are included to illustrate the progression
     \label{fig:dashboard-v3}
 \end{figure}
 
-\subsubsection*{\textbf{Co-Design of Robot Behavior}}
+\subsection{\textbf{Behavioral Design Iterations}}
 
 Beyond interface adjustments, each walkthrough also shaped our understanding of effective robot behaviors in child-facing settings.
-Feedback from participants informed refinements in how the robot expresses negative vs. positive cues, how it maintains neutrality, and how children interpret its social role.
-Key insights included:
 
+Across the three walkthroughs, a consistent pattern emerged in how children and experts responded to the robot's behavior.
+Rather than detailing new robot actions, participants influenced the style, tone, and social framing of these actions, shifting the robot from an authority figure to a pet-like peer.
+This shift affected the design of feedback modalities (e.g., neutral negative feedback, celebratory positive feedback) and the narrative framing of the robot within the experiment.
+These reflections did not result in autonomous learning, but they directly shaped the robot's available actions and responses,
+expanding its behavioral repertoire and enabling the operator to deliver more socially aligned interventions.
+This iterative refinement represented one of the three core directions explored throughout the experiments and laid the groundwork for Step 3 of the study,
+where the robot begins to apply these socially informed behaviors in response to interaction cues.
+While still operator-driven, this stage anticipates future developments toward semi-autonomous behavior grounded in prior human-led interventions (see Section~\ref{sec:design}).
+\\
+Key insights included:
 \begin{itemize}
-    \item \textbf{Framing of the Robot:} Children consistently perceived the robot as a playful companion or pet, rather than an authority figure.
-          This influenced design decisions toward peer-like, non-disciplinary behaviors.
-    \item \textbf{Feedback Intensity:} Both experts and children emphasized the importance of scalable, multimodal feedback (e.g., lights + movement + sound), especially for positive interactions.
-          Negative feedback should remain neutral and minimal to avoid encouraging misbehavior.
-    \item \textbf{Social Engagement:} Naming the robot, petting it, and attributing personality to it emerged naturally, suggesting personalization features may enhance engagement.
-    \item \textbf{Learning by Teaching:} Children actively guided the robot using verbal and physical cues, validating the LbT framing.
-          Tasks like teaching the robot to maintain distance or follow polite commands proved intuitive and effective.
-    \item \textbf{Emotion and Context Awareness:} Middle school students suggested that robots should use emotional cues, facial expressions, and context to decide how and when to interact.
+    \item \textbf{Framing of the Robot:} Children consistently perceived the robot as a playful companion or pet, rather than an authority figure.\\
+          This influenced design decisions toward peer-like, non-disciplinary behaviors. [Exp 1--3]
+    \item \textbf{Feedback Intensity:} Both experts and children emphasized the importance of scalable, multimodal feedback (e.g., lights + movement + sound), especially for positive interactions.\\
+          Negative feedback should remain neutral and minimal to avoid encouraging misbehavior. [Exp 1--3]
+    \item \textbf{Social Engagement:} Naming the robot, petting it, and attributing personality to it emerged naturally, suggesting personalization features may enhance engagement. [Exp 2--3]
+    \item \textbf{Learning by Teaching:} Children actively guided the robot using verbal and physical cues, validating the LbT framing.\\
+          Tasks like teaching the robot to maintain distance or follow polite commands proved intuitive and effective. [Exp 2--3]
+    \item \textbf{Emotion and Context Awareness:} Middle school students suggested that robots should use emotional cues, facial expressions, and context to decide how and when to interact. [Exp 3]
 \end{itemize}
 
-These behavioral reflections informed the structure of robot actions available through the dashboard and laid the groundwork for future development of semi-autonomous and emotionally aware systems.
+These behavioral reflections informed the structure of robot actions available through the dashboard, highlighting design directions for future exploration of semi-autonomous and emotionally aware systems.
 
 \newpage
 
 \section{\textbf{Conclusions}}\label{sec:conclusions}
-This project presents the design and implementation of a web-based dashboard to enable Wizard-of-Oz control of a social robot used in a Learning by Teaching experiment with children. The system is part of the larger TESORO initiative and lays the groundwork for studying how social robots can assist in learning soft skills like turn-taking.
+This project presents the design and implementation of a web-based dashboard to enable Wizard-of-Oz control of a social robot used in a Learning by Teaching experiment with children.
+The system is part of the larger TESORO initiative and lays the groundwork for studying how social robots can assist in learning soft skills like turn-taking.
 \todo[inline]{To be expanded}
 
 \subsection{\textbf{Future Work}}
