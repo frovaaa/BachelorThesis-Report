@@ -183,13 +183,48 @@ The sessions included:
 
 The following subsections describe the setup, key observations, and design implications of each session, followed by a summary of the iterative changes implemented in response to user feedback.
 
+
 \subsection{\textbf{Walkthrough with Experts}}
 \subsection*{\textbf{Setup and procedure}}
--
+The first evaluation session was conducted in an office setting and involved two PhD researchers with expertise in Human-Computer Interaction (HCI) and accessibility.
+They were asked to role-play as two children collaborating on a Lego tower building task.
+Initially, they were seated on the floor approximately one meter apart, with the RoboMaster EP robot placed slightly in front of them at the midpoint of this distance, not directly between them.
+
+The system was operated by an evaluator seated nearby at a desk, with a direct line of sight to the play zone.
+A third researcher took notes throughout the session, while two additional observers with expertise in educational technology and human-robot interaction silently monitored the interaction and its outcomes.
+
+Although the scenario was designed around pre-defined robot positions, the participants quickly moved from their initial spots, rendering the static positions ineffective.
+However, the dashboard's joystick feature enabled the operator to adapt in real time by manually repositioning the robot and triggering actions.
+The session unfolded as a dynamic and playful interaction between the two participants and the robot, including episodes of joint play, interaction breakdowns, and regulatory robot interventions.
+
+After the active session, all participants engaged in an open-ended discussion, which yielded critical reflections on the interface's design, the robot's perceived role, and the effectiveness of various robot behaviors.
+These observations and insights directly informed the next iteration of the dashboard.
+
 \subsection*{\textbf{Key observations}}
--
+\begin{itemize}
+    \item The pre-defined movement positions were quickly invalidated when the "children" moved from their expected spots. The experts stressed the importance of allowing the operator to improvise and react dynamically.
+    \item Negative robot feedback, such as "shaking the head" by spinning on the spot, was perceived as entertaining, rather than corrective. This could encourage children to misbehave just to see the robot react.
+    \item Experts observed that opening the box with the gripper and presenting it to a participant invited them to place something inside. This could be used as a form of collaborative engagement or de-escalation.
+    \item Experts emphasized the importance of distinguishing between different levels of feedback, both positive and negative.
+          For positive reinforcement, a scalable approach could include combinations of lights, sounds, and movement, ranging from a simple LED blink to a celebratory motion sequence.
+          Negative feedback, on the other hand, should be kept minimal and neutral: limited to red lights, with no sound, and little to no movement, possibly just a slight backward motion to signal withdrawal.
+          Sound should be excluded from negative interventions entirely to prevent the robot from becoming a source of entertainment.
+    \item The robot was perceived more as a "peer" than an authority figure, prompting the need to frame it accordingly in both behavior and design.
+    \item Experts advised against focusing the robot's attention too much on one child, as this could lead to perceptions of unfairness.
+    \item Introducing the robot to children before the task might help reduce distractions during the experiment, as curiosity would be partially satisfied beforehand.
+    \item Large Lego Duplo bricks limited complexity of the task; smaller pieces might offer a more engaging challenge.
+\end{itemize}
+
 \subsection*{\textbf{Design implications}}
--
+\begin{itemize}
+    \item The role of the robot as a peer should be reinforced through behavior that is cooperative, inclusive, and friendly rather than disciplinary.
+    \item Feedback must be clearly divided into positive and negative categories, with minimal overlap in how they are perceived.
+    \item The dashboard should support a broader set of robot actions, including flexible movement, and the ability to give nuanced feedback.
+    \item Following this session, the dashboard was updated to provide broader control over robot functionalities, including gripper manipulation and advanced LED options such as color selection, blink timing, and speed adjustments.
+          Although joystick control for custom movement was already available, the session reinforced its importance in enabling operator improvisation.
+          Feedback actions were reorganized into clearly defined positive and negative categories with different intensity levels, and the use of sound was restricted to positive feedback only.
+          These changes aimed to improve the system's responsiveness and better align robot behavior with user expectations.
+\end{itemize}
 
 \subsection{\textbf{Walkthrough with High School Students}}
 \subsection*{\textbf{Setup and procedure}}
