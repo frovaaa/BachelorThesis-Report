@@ -228,11 +228,46 @@ These observations and insights directly informed the next iteration of the dash
 
 \subsection{\textbf{Walkthrough with High School Students}}
 \subsection*{\textbf{Setup and procedure}}
--
+The second evaluation session was conducted in a spacious conference room.
+A large children's floor mat was added to define a playful zone, following recommendations from the first experiment.
+The robot used the updated Version 2 of the dashboard interface, which incorporated changes such as feedback intensity levels and different LED color options.
+
+The session involved four high school students, divided into two pairs.
+Each pair was asked to role-play as younger children (elementary or middle school age) participating in a turn-taking Lego activity.
+The robot was operated by an evaluator from a nearby desk.
+Before the session began, the robot was introduced to the participants to reduce initial distraction, another refinement based on the previous walkthrough.
+
+Each pair of students participated in two stages:
+\begin{itemize}
+    \item \textbf{Step 1: Robot as Regulator} - The two "children" were asked to collaborate on building a Lego tower while occasionally engaging in simulated turn-taking violations.
+          The robot was expected to intervene using visual and movement-based feedback.
+    \item \textbf{Step 2: Child as Regulator} - One student built a Lego structure with help from the robot, while the second student acted as a mediator.
+          The robot would occasionally behave incorrectly (e.g., bringing the wrong Lego piece or running away), prompting the mediator to "teach" the robot how to behave, following the Learning by Teaching paradigm.
+    \item \textbf{Step 3: Co-Design Discussion} - After the interaction tasks, students were invited to openly discuss their experience with the robot, suggest new behaviors, and reflect on what they would expect from a social robot in this context.
+          The session was semi-structured and aimed at eliciting child-led ideas to inform future iterations.
+\end{itemize}
+
+The same three-stage procedure was repeated with the second pair of students.
+During the first round, all four students were present and participated in observing or acting.
+However, for the second round, only the second pair remained, as the first group had to leave the session early due to other commitments.
+
 \subsection*{\textbf{Key observations}}
--
+\begin{itemize}
+    \item Red LED signals alone were insufficient to attract attention, especially due to ambient lighting and the robot's position on the floor.
+    \item The lack of sound in negative feedback led to the robot being ignored during turn-taking violations. Participants were focused on the Lego task and did not notice subtle visual cues.
+    \item A more effective attention-grabbing strategy was to have the robot "invade" the children's personal space with a quick approach motion.
+    \item The robot being named by the students helped increase its perceived presence and relational value during interactions.
+    \item One participant suggested that the robot could turn around and "walk away" when reacting negatively, simulating being upset or "offended."
+\end{itemize}
+
 \subsection*{\textbf{Design implications}}
--
+\begin{itemize}
+    \item Visual-only feedback may be insufficient in real-world conditions, especially on the floor, so movement patterns should be enhanced to compensate for the lack of sound.
+    \item Slightly intrusive or exaggerated motions (e.g., quick approaches, turning away) can be effective in drawing attention and reinforcing robot personality.
+    \item Allowing children to name the robot may enhance engagement and relational dynamics, particularly in long-term deployments.
+    \item These results confirmed the need for flexible, expressive robot behaviors and validated many of the improvements made after the first expert walkthrough.
+    \item Based on the needs of Step 2 in the interaction task, where the robot requests a specific colored brick from the regulator, additional LED color options were added to the interface to support clearer and more flexible signaling.
+\end{itemize}
 
 \subsection{\textbf{Walkthrough with Middle School Students}}
 \subsection*{\textbf{Setup and procedure}}
