@@ -85,26 +85,33 @@ Multiple systems have explored teachable robots in child-centered scenarios.
 Tanaka and Matsuzoe~\cite{10.5898/JHRI.1.1.Tanaka} showed how children teaching a NAO~\cite{nao_robot} robot led to improved vocabulary learning, while Love et al.~\cite{love2023adapting, love2024teachable} developed reinforcement learning mechanisms to adapt dialog and sustain engagement.
 These systems highlight the benefits of positioning the robot as a learner rather than a teacher, shifting power dynamics and empowering the child.
 
-Yet, early-stage experimentation still relies heavily on the \textit{Wizard-of-Oz (WoZ)} methodology, where a human operator simulates intelligent robot behavior~\cite{weiss2010userWOZ, rietz2021woz4uPepper, SCHOONDERWOERD2022102831}.
-WoZ setups remain crucial for prototyping and evaluating interaction strategies before full autonomy is achievable.
-Existing tools like WoZ4U~\cite{rietz2021woz4uPepper} offer flexible interfaces for humanoid robots but are tightly coupled to specific platforms (e.g., Pepper~\cite{pepper_robot, rietz2021woz4uPepper}) and rarely optimized for non-humanoid, mobile robots like the RoboMaster EP, making them unsuitable for our scenario.
+While promising, these approaches often begin with exploratory setups grounded in the Wizard-of-Oz (WoZ) methodology, where a human simulates robot behavior to evaluate interaction strategies before full autonomy is developed~\cite{weiss2010userWOZ, rietz2021woz4uPepper, SCHOONDERWOERD2022102831}.
+Tools like WoZ4U~\cite{rietz2021woz4uPepper} are effective for humanoid robots like Pepper~\cite{pepper_robot} but are tightly coupled to specific hardware and are not optimized for more mobile, non-humanoid platforms like the RoboMaster EP.
+This highlights a technical gap in flexible, child-facing WoZ systems that support socially attuned feedback and intuitive control.
 
-In the educational HRI space, the gap between technical research tools and child-facing interfaces remains wide.
-Professional platforms such as \textit{Foxglove}~\cite{foxglove} and \textit{RViz2}~\cite{rviz2} are designed for telemetry and debugging, not social feedback or emotional nuance.
-Our project addresses this gap by introducing a Wizard-of-Oz dashboard co-designed with educators and children, specifically tailored for accessible and expressive child-robot interaction.
+Moreover, existing robotic middleware tools such as Foxglove~\cite{foxglove} and RViz2~\cite{rviz2} are tailored for debugging and telemetry, not for dynamic, socially expressive feedback.
+They require technical expertise and offer limited support for multimodal, context-aware interaction, especially with children.
+Our work addresses this shortcoming through the development of a web-based dashboard designed explicitly for expressive, real-time robot control in educational settings.
+The dashboard was iteratively co-designed with researchers and children to meet the demands of playful and socially responsive interaction.
 
-The \textit{TESORO} project~\cite{landoni2025tesoro} frames this effort in a broader vision that emphasizes empowerment, accessibility, and emotional self-regulation, especially for children with intellectual disabilities.
-A key insight from the TESORO proposal is the notion of mutual learning: not only does the child influence the robot's behavior, but the robot becomes a conduit for children to explore their own social and emotional strategies.
+This contribution aligns with the goals of the broader \textit{TESORO} project~\cite{landoni2025tesoro}, which envisions accessible, emotionally intelligent robots that foster mutual learning, especially for children with intellectual disabilities.
+TESORO promotes the idea that social robots should not only guide behavior but also learn from the child, turning the robot into a reflective tool for self-regulation and emotional awareness.
 
-This shift aligns with current participatory design principles, which advocate for involving children in shaping the robots they interact with~\cite{osti_10386132, rose2019participatory}.
-Co-design studies suggest that children are more engaged and feel more ownership when they can personalize the robot's behavior or see it adapt in response to their guidance.
+Co-design and participatory methods have gained traction in child-robot interaction research, affirming that children are more engaged when they can personalize or influence a robot's behavior~\cite{osti_10386132, rose2019participatory}.
+Such methods empower children and ensure that social robot designs are inclusive and developmentally appropriate.
 
-Moreover, the study by Arreghini et al.~\cite{arreghini2022exploring} explores how humans perceive and prefer different robot collaboration strategies (passive, reactive, proactive) in a cognitively and physically demanding task.
+Additionally, the study by Arreghini et al.~\cite{arreghini2022exploring} explores how humans perceive and prefer different robot collaboration strategies (passive, reactive, proactive) in a cognitively and physically demanding task.
 While not focused on children, the findings underline that proactive behaviors, especially when paired with multimodal feedback (e.g., lights, sounds, actions), lead to more positive user evaluations, even when task completion takes longer.
 These insights are highly relevant to child-robot interaction design, where responsiveness and perceived helpfulness also shape engagement and acceptance.
 
-Our project contributes to this growing field by combining (1) an accessible and expressive control interface, (2) a structured yet flexible experiment grounded in Learning by Teaching, and (3) formative walkthroughs that expose how children interpret, regulate, and reflect on social robot behavior.
-These contributions set the stage for future work on semi-autonomous social agents that adapt in real time to children's regulatory input.
+Our work contributes to this growing body of research by integrating:
+(1) an expressive and adaptable control interface for WoZ experimentation,
+(2) a structured yet flexible study scenario centered on Learning by Teaching, and
+(3) an exploratory methodology that surfaces how children engage with, perceive, and guide robot behavior.
+
+Crucially, the development of the dashboard and the exploration of social interaction dynamics were pursued in tandem.
+This dual approach reflects the project's broader aim, not just to implement an interface, but to understand how such an interface can scaffold meaningful, teachable moments and social learning experiences.
+It lays essential groundwork for future investigations into semi-autonomous systems capable of adapting to children's real-time regulatory input.
 
 \section{\textbf{Experiment Design and Goals}}\label{sec:design}
 
