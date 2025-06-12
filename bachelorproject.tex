@@ -64,16 +64,42 @@ The rest of the report is organized as follows: Section~\ref{sec:background} pre
 
 \section{\textbf{Experiment Design and Goals}}\label{sec:design}
 
-The experiment designed for this project aims to explore how a social robot can support children's learning through turn-taking regulation. It is part of the Usage Research necessary to drive the design of effective child-robot interactions to support the learning by teaching paradigm. The overall investigation is structured into three progressive stages:
+The experiment designed for this project aims to explore how a social robot can support children's learning through turn-taking regulation.
+It is part of the Usage Research necessary to drive the design of effective child-robot interactions that support the Learning by Teaching (LbT) paradigm.
 
+\subsection*{\textbf{Motivation and Context}}
+The experiment was designed to investigate how children can teach a robot socially appropriate behaviors in a collaborative, rule-based play scenario.
+Within the TESORO project, this experiment serves as a preliminary study to simulate the LbT dynamic, with the robot acting as both a participant and a teachable agent.
+
+\subsection*{\textbf{Research Objectives}}
+The primary goals of the experiment are:
 \begin{itemize}
-    \item \textbf{Step 1: Robot as Regulator} - Two children collaboratively build a Lego tower by taking turns. The robot observes and intervenes in case of turn violations or inappropriate behavior, using multimodal cues such as LED lights, vocalizations, and gestures.
-    \item \textbf{Step 2: Child as Regulator} - A child is tasked with regulating the interactions between the robot and another child that will perform a similar task to Step 1. This step exploits the LbT paradigm, where the regulator learns how to collaborate and keep turns.
-    \item \textbf{Step 3: Robot Learns How and When to Intervene} - The robot applies the learned behavior during interactions with children in Step 1 and Step 2.
+    \item To explore how a social robot can foster turn-taking and collaboration between children.
+    \item To evaluate how children respond to multimodal robot feedback (e.g., lights, movement, sound).
+    \item To study how children engage in teaching the robot correct behaviors, especially in social contexts.
+    \item To assess the feasibility and expressiveness of Wizard-of-Oz robot control during child-robot interactions.
 \end{itemize}
 
-This report provides the foundational knowledge for implementing later stages of autonomous learning. The robot's interventions are controlled via a Wizard-of-Oz setup, and the primary goal is to assess the feasibility and effectiveness of such interventions in developing children's soft skills.
-\todo[inline]{To be expanded}
+\subsection*{\textbf{Scenario and Task Design}}
+The chosen task, collaboratively building a Lego tower, requires communication, turn-taking, and shared goals.
+This makes it an ideal setting for observing how robot feedback and teaching dynamics unfold naturally.
+
+\subsection*{\textbf{Three-Step Experiment Structure}}
+The experiment was structured in three progressive phases, each enabling the team to explore different facets of LbT:
+
+\begin{itemize}
+    \item \textbf{Step 1: Robot as Regulator}: Two children collaboratively build a Lego tower while the robot observes and intervenes in cases of turn-taking violations or disruptive behavior using feedback such as LEDs, movement, or sounds.
+    \item \textbf{Step 2: Child as Regulator}: One child mediates the interaction between the robot and a peer, guiding the robot's actions and providing corrections. This directly instantiates the LbT paradigm.
+    \item \textbf{Step 3: Robot Learns How and When to Intervene}: The robot enacts behavior patterns influenced by previous interactions. While still controlled via Wizard-of-Oz, this phase simulates a transition toward autonomy in future implementations.
+\end{itemize}
+
+\subsection*{\textbf{Wizard-of-Oz Interface Role}}
+A key component of the experiment is the web-based dashboard used to remotely control the robot in real time.
+The interface was iteratively developed to support both reactive and expressive robot behaviors based on child feedback.
+
+\subsection*{\textbf{TESORO Alignment}}
+This experiment aligns with the TESORO project's longer-term vision of developing socially intelligent robots that can learn from children in real-time.
+The insights gathered here lay the groundwork for future autonomous learning systems that better reflect children's expectations and communication styles.
 
 \section{\textbf{System Design and Implementation}}\label{sec:system}
 
