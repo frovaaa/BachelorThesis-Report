@@ -168,10 +168,32 @@ The system was tested to ensure that the emergency stop reliably overrides all o
 \end{figure}
 
 \subsection{\textbf{Dashboard Interface}}
-\todo[inline]{
-    Here we will describe the final dashboard interface, including the main features and functionalities.
-    We will also include screenshots of the dashboard to illustrate its design and layout.
-}
+
+The dashboard interface is the primary tool used to operate the robot during experiments.
+Its evolution was directly informed by iterative feedback from all three walkthroughs and was crucial in enabling flexible and socially responsive interventions.
+The dashboard was developed using Next.js with Material UI (MUI) components, and it integrates with ROS2 through a combination of \texttt{roslibjs} and a custom middleware using \texttt{rclnodejs}.
+
+The final version of the interface (see Figure~\ref{fig:dashboard-v3-desc}) is structured into clear functional zones to streamline operator interaction and support rapid decision-making.
+Key components include:
+
+\begin{itemize}
+    \item \textbf{Movement Controls:} A joystick widget allows precise navigation of the robot in real time, particularly useful when children move unpredictably or outside predefined zones.
+    \item \textbf{Gripper and Arm Control:} Operators can open and close the robot's gripper independently, as well as trigger macro-actions involving arm movement, such as presenting or retrieving an object.
+    \item \textbf{LED Feedback Panel:} This section enables configuration of the robot's LED lights, including color selection, blink patterns, speed, and duration. These were expanded to support both expressive feedback and task-specific signaling (e.g., requesting a particular brick color).
+    \item \textbf{Sound Library:} A curated set of audio clips can be played to reinforce positive feedback. As a design choice, sounds were excluded from negative feedback to prevent distraction.
+    \item \textbf{Feedback Triggers:} Predefined buttons enable quick activation of positive or negative robot responses, each available in multiple intensity levels. This feature supports nuanced behavioral interventions in response to subtle child actions.
+    \item \textbf{Macro-Scenarios:} A set of programmable compound actions allows operators to trigger complex sequences (e.g., move forward + light + sound) with a single button, improving responsiveness in high-tempo interactions.
+    \item \textbf{Emergency Stop Button:} A large, visually prominent button that immediately halts any ongoing robot action and stops all motors to ensure participant safety.\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/dashboard_v3.png}
+    \caption{Final version of the dashboard interface. All main functionalities are organized into dedicated panels, supporting expressive and safe robot operation during social interaction experiments.}
+    \label{fig:dashboard-v3-desc}
+\end{figure}
+
+Throughout development, the interface was refined to enhance usability under time pressure, ensure smooth robot operation, and support playful, peer-like interactions as encouraged by co-design feedback.
+The result is a robust and extensible control panel capable of supporting both current Wizard-of-Oz studies and future semi-autonomous scenarios.
 
 \section{\textbf{Usage Research: Formative Evaluation and Iterative Co-Design}}\label{sec:evaluation}
 Formative evaluation is a method of assessing a system during its development, with the goal of identifying areas for improvement and guiding the design process from its earliest stages.
