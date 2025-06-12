@@ -27,30 +27,51 @@
 
 \end{committee}
 
-\abstract { Abstract goes here ...
-You may include up to six keywords or phrases. Keywords should be separated with semicolons. 
-\\
-\textbf{Keywords}:
+\abstract {
+Social robots are becoming increasingly prevalent in educational settings, offering new opportunities for collaborative learning and social skill development. 
+This thesis explores the Learning by Teaching (LbT) paradigm, where children interact with a social robot to foster turn-taking and prosocial behavior. 
+As part of the TESORO project, we designed and evaluated a web-based dashboard that enables Wizard-of-Oz control of a RoboMaster EP robot in a Lego-building task with children. 
+The robot intervenes to regulate turn-taking and is perceived as a peer-like entity rather than an authority figure. 
+We conducted three formative, iterative experiments involving HCI experts, high school students, and middle school children, leading to refinements in the robot's behavior and the dashboard interface. 
+Our findings highlight the importance of multimodal feedback, personalization, and emotional awareness in child-robot interaction. 
+The study provides a foundation for future semi-autonomous robot behavior and real-time learning from children's regulatory input.
 
+\textbf{Keywords}: Social robots; Learning by Teaching; Human-Robot Interaction; Wizard-of-Oz; Formative Evaluation; Child-Computer Interaction.
 }
+
 \begin{document}
 \maketitle
 \tableofcontents\newpage
 %\listoffigures\newpage
 
 \section{\textbf{Introduction}}
-\todo[inline]{Will rewrite when working on the abstract, need to write about already existing tools. Currently, this is a mixup of the abstract and the introduction.}
 
-Social robots are increasingly finding their way into learning environments, where their role as collaborators, tutors, or learning companions is being actively explored. In particular, the paradigm of \textit{Learning by Teaching} (LbT) offers a promising framework in which children can reinforce their understanding and social-emotional skills by teaching a robot. This approach has the potential to enhance engagement, improve soft skills, and support inclusive education.
+How can we design social robots that help children develop prosocial skills, like turn-taking, while also learning from the children themselves?
+This thesis explores this question through the lens of the Learning by Teaching (LbT) paradigm, an approach where learners consolidate their understanding by teaching others.
+This approach has been studied in both educational software and robotics contexts~\cite{biswas2005learning, 10.5898/JHRI.1.1.Tanaka}.
+In this context, the robot is not merely a passive tool but a teachable partner embedded in a collaborative play scenario.
 
-This bachelor project is part of the broader TESORO initiative, for which an SNSF funding application has been submitted and is currently awaiting approval. My contribution focuses on a practical implementation: the design and development of a web-based dashboard that enables a Wizard-of-Oz control of a social robot during an exploratory experiment involving turn-taking with children.
+This project is embedded within the broader TESORO initiative, a research effort aiming to co-design accessible social robots that foster mutual learning experiences with children, including those with intellectual disabilities~\cite{landoni2025tesoro}.
+While TESORO's long-term ambition is to develop adaptive and emotionally intelligent robots, this bachelor thesis contributes to its early-stage development by focusing on a Wizard-of-Oz setup: a human-controlled robot simulates behavior to test early interaction concepts and gather formative feedback.
+The effectiveness and practicality of the Wizard-of-Oz (WoZ) approach in HRI research has been well established in the literature~\cite{weiss2010userWOZ, rietz2021woz4uPepper, SCHOONDERWOERD2022102831}.
 
-The experiment consists of a Lego-building task performed by two children taking turns. The robot, remotely controlled via the dashboard, intervenes when turn-taking violations occur, aiming to regulate the interaction and reinforce collaborative behavior.
+While existing tools such as Foxglove~\cite{foxglove} or RViz~\cite{rviz2} offer powerful robotic control and visualization capabilities, they are designed primarily for technical debugging and telemetry inspection.
+These platforms are not suited to educational or social interaction contexts, where real-time adaptability, intuitive use, and expressiveness are key.
+In contrast, the dashboard presented in this work was specifically co-designed for playful and socially attuned interaction with children.
+It prioritizes ease of use for non-technical operators (e.g., educators or researchers) and enables the delivery of nuanced, multimodal feedback during Learning by Teaching (LbT) scenarios.
+These limitations are especially apparent in scenarios involving young children, where co-design and accessibility play a critical role~\cite{osti_10386132, rose2019participatory}.
 
-This report presents the background of the project, the research and implementation goals, the technical architecture of the system, and the planned experimental study.
-The developed dashboard serves as a starting point for preliminary studies and lays the groundwork for later stages of the TESORO project where the robot will learn these regulatory behaviors from various operators, including researchers, teachers, or even the children themselves. Additionally, it could also serve other projects that are based on Human-Robot Interaction (HRI) since it will be developed in a way that is re-usable for different scenarios.
+This thesis presents a dual contribution: the development of a web-based dashboard for Wizard-of-Oz control of a social robot, and an exploratory investigation into how children perceive, interact with, and teach the robot in collaborative play scenarios.
+These two strands evolved in parallel and informed each other throughout the project.
+The dashboard's design was refined iteratively through hands-on evaluation sessions, while these same sessions served as a space to explore children's social expectations, feedback preferences, and engagement strategies.
+This methodology reflects a formative evaluation approach commonly used in HRI to iteratively adapt both behavior and interaction design~\cite{love2024teachable}.
+Through three walkthrough experiments, we analyzed how multimodal feedback such as lights, movement, and sound, was interpreted and how the robot's perceived role evolved from an authoritative presence to a playful peer.
+These insights not only shaped the technical design but also informed the behavioral framing of the robot, highlighting the mutual reinforcement between interface usability and socially attuned robot conduct.
 
-\subsection{\textbf{Report structure}}
+Rather than testing specific learning outcomes, this thesis aims to inform the co-design of child-robot interaction tools.
+It demonstrates how formative evaluation can guide both interface design and behavioral strategies in child-facing social robots.
+
+\subsection{\textbf{Report Structure}}
 The rest of the report is organized as follows: Section~\ref{sec:background} presents the related work and theoretical framework; Section~\ref{sec:design} outlines the experiment scenario and research goals; Section~\ref{sec:system} describes the dashboard's architecture and implementation; Section~\ref{sec:evaluation} presents the evaluation process and findings across three iterative walkthroughs, highlighting how user feedback informed the co-design of the final system; and Section~\ref{sec:conclusions} concludes with future directions.
 
 
@@ -449,6 +470,7 @@ The system is part of the larger TESORO initiative and lays the groundwork for s
     Long-term goal: enabling real-time learning from the child's regulatory actions and shifting toward semi-autonomous robot behavior.
 }
 
+\newpage
 
 %%%%% BIBLIOGRAPHY %%%%%
 \bibliographystyle{abbrv}
