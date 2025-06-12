@@ -77,13 +77,28 @@ While the system remains operator-driven, it lays the foundation for future rese
 The rest of the report is organized as follows: Section~\ref{sec:background} presents the related work and theoretical framework; Section~\ref{sec:design} outlines the experiment scenario and research goals; Section~\ref{sec:system} describes the dashboard's architecture and implementation; Section~\ref{sec:evaluation} presents the evaluation process and findings across three iterative walkthroughs, highlighting how user feedback informed the co-design of the final system; and Section~\ref{sec:conclusions} concludes with future directions.
 
 
-\section{\textbf{State of the art}}\label{sec:background}
-\todo[inline]{Here we will summarize the main findings, carefully explain the differences with our work and could have a small "background information" section.}
-\textit{
-    Explain all acronyms and abbreviations. For example, the first time an acronym is used, write it out in full and place the acronym in
-    parentheses. When using the Graphical User Interface (GUI) version, the use may...
-}
 
+\section{\textbf{State of the art}}\label{sec:background}
+
+The integration of social robots in educational settings has been explored through various paradigms such as direct instruction, peer-like interaction, and more recently, the \textit{Learning by Teaching (LbT)} approach.
+LbT is grounded in the idea that teaching others enhances the learner's own understanding~\cite{biswas2005learning}.
+In the context of HRI, this paradigm has shown potential to increase engagement and learning outcomes, particularly with young learners~\cite{10.5898/JHRI.1.1.Tanaka, love2024teachable}.
+
+Several systems have explored how teachable robots can support this dynamic.
+For instance, Tanaka and Matsuzoe~\cite{10.5898/JHRI.1.1.Tanaka} demonstrated how Japanese children taught vocabulary to a NAO robot, while Love et al.~\cite{love2023adapting, love2024teachable} explored reinforcement learning to personalize dialog and improve engagement during teaching conversations.
+
+Despite this progress, early-stage experimentation still relies heavily on the \textit{Wizard-of-Oz (WoZ)} method~\cite{weiss2010userWOZ, rietz2021woz4uPepper}, where human operators simulate intelligent behavior to prototype interactions and gather feedback.
+Tools like WoZ4U provide open-source dashboards for controlling Pepper robots, yet they are tailored to humanoid platforms and not readily adaptable to other robotics systems like the RoboMaster EP.
+
+Moreover, most existing platforms used in robotics research (e.g., \textit{Foxglove}~\cite{foxglove}, \textit{RViz2}~\cite{rviz2}) are not designed with non-technical users or child-facing applications in mind.
+These tools focus on telemetry and debugging rather than real-time social interaction.
+Our project addresses this gap by offering an expressive and accessible interface co-designed for child-robot interaction scenarios.
+
+The \textit{TESORO proposal}~\cite{landoni2025tesoro} situates this effort in a broader vision that seeks to empower children, including those with intellectual disabilities, to explore their emotions and self-regulation through collaborative play with robots.
+Our work contributes to this vision by prototyping early interaction strategies and a control infrastructure that supports eventual transitions to autonomy and mutual learning.
+
+Finally, recent participatory design studies emphasize the importance of co-designing robot behavior with children~\cite{osti_10386132, rose2019participatory}, reinforcing that accessibility, playfulness, and emotional awareness are key factors in successful child-robot interaction design.
+Our iterative evaluation confirms these values and informs both system-level design and future research directions.
 
 \section{\textbf{Experiment Design and Goals}}\label{sec:design}
 
