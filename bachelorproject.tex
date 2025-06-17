@@ -32,7 +32,7 @@ Social robots are becoming increasingly prevalent in educational settings, offer
 This project focuses on the design of tools to support the exploration of the Learning by Teaching (LbT) paradigm, where children interact with a social robot to foster turn-taking and prosocial behavior. 
 As part of the TESORO project, we designed and evaluated a web-based dashboard that enables Wizard-of-Oz control of a RoboMaster EP robot in a Lego-building task with children. 
 The robot intervenes to regulate turn-taking and is perceived as a peer-like entity rather than an authority figure. 
-We conducted three formative, iterative experiments involving HCI experts, high school students, and middle school children, leading to refinements in the robot's behavior and the dashboard interface to be used in future such studies. 
+We conducted four formative, iterative experiments involving HCI experts, high school students, middle school, and elementary school children, highlighting contrasting engagement patterns across age and gender, leading to refinements in the robot's behavior and the dashboard interface to be used in future such studies. 
 Our findings highlight the importance of multimodal feedback, personalization, and emotional awareness in child-robot interaction. 
 The study provides a foundation for future semi-autonomous robot behavior and real-time learning from children's regulatory input.
 
@@ -65,7 +65,7 @@ This thesis presents a dual contribution: the development of a web-based dashboa
 These two strands evolved in parallel and informed each other throughout the project.
 The dashboard's design was refined iteratively through hands-on formative evaluation sessions, while these same sessions served as a space to initially explore children's social expectations, feedback preferences, and engagement strategies.
 This methodology reflects a formative evaluation approach commonly used in HRI to iteratively adapt both behavior and interaction design~\cite{love2024teachable}.
-Through three walkthrough experiments, we analyzed how multimodal feedback such as lights, movement, and sound was interpreted and how the robot's perceived role evolved from an authoritative presence to a playful peer.
+Through four walkthrough experiments, including a final one with elementary school children, we analyzed how multimodal feedback such as lights, movement, and sound was interpreted and how the robot's perceived role evolved from an authoritative presence to a playful peer.
 These insights not only shaped the technical design but also informed the behavioral framing of the robot, highlighting the mutual reinforcement between interface usability and socially attuned robot conduct.
 
 Rather than testing specific learning outcomes, this work aims to inform the co-design of child-robot interaction tools.
@@ -74,7 +74,12 @@ It demonstrates how formative evaluation can guide both interface design and beh
 While the system remains operator-driven, it lays the foundation for future research into semi-autonomous behavior grounded in children's regulatory input.
 
 \subsection{\textbf{Report Structure}}
-The rest of the report is organized as follows: Section~\ref{sec:background} presents the related work and theoretical framework; Section~\ref{sec:design} outlines the experiment scenario and research goals; Section~\ref{sec:system} describes the dashboard's architecture and implementation; Section~\ref{sec:evaluation} presents the evaluation process and findings across three iterative walkthroughs, highlighting how user feedback informed the co-design of the final system; and Section~\ref{sec:conclusions} concludes with future directions.
+The rest of the report is organized as follows:
+Section~\ref{sec:background} presents the related work and theoretical framework;
+Section~\ref{sec:design} outlines the experiment scenario and research goals;
+Section~\ref{sec:system} describes the dashboard's architecture and implementation;
+Section~\ref{sec:evaluation} presents the evaluation process and findings across four iterative walkthroughs, highlighting how user feedback informed the co-design of the final system;
+and Section~\ref{sec:conclusions} concludes with future directions.
 
 \section{\textbf{State of the Art}}\label{sec:background}
 The integration of social robots in educational contexts has evolved significantly over the past two decades, moving from structured teaching tools to more dynamic, participatory agents capable of engaging in mutual learning with children.
@@ -278,14 +283,15 @@ In this project, formative evaluation was used as a continuous, participatory me
 By integrating insights from diverse stakeholders: experts, high school students, and middle school children, the system evolved through iterative feedback.
 This approach enabled responsive design decisions and supported the co-creation of meaningful child-robot interaction scenarios.
 
-This section presents the evaluation of the system through three exploratory sessions, each structured as an iterative walkthrough.
+This section presents the evaluation of the system through four exploratory sessions, each structured as an iterative walkthrough.
 These sessions aimed to assess the usability and flexibility of the dashboard, understand the dynamics of child-robot interaction, and collect feedback to inform the design of both the interface and the robot's behavior.
 Each evaluation contributed to the co-design process by revealing user needs and contextual challenges in real time.
 
 The sessions included:
-(1) a walkthrough with HCI and accessibility experts, who role-played as elementary or middle school students (see Section~\ref{sec:expert-walkthrough});
-(2) a session with high school students working in pairs and simulating collaborative behavior on the shared floor mat (see Section~\ref{sec:high-school-walkthrough}); and
-(3) a pilot study with middle school children, which evolved into a semi-structured discussion and informal walkthrough focusing on robot behavior and social interaction patterns (see Section~\ref{sec:middle-school-walkthrough}).
+(1) a walkthrough with HCI and accessibility experts,
+(2) a session with high school students,
+(3) a pilot study with middle school children, and
+(4) a final pilot with elementary school children, examining how younger age and group composition influence robot perception.
 
 The following subsections describe the setup, key observations, and design implications of each session, followed by a summary of the iterative changes implemented in response to user feedback.
 
@@ -413,6 +419,41 @@ Furthermore, the children's enthusiasm for emotional awareness features, like in
 The idea of equipping the robot with an on-device interface also emerged as a promising direction for enabling more direct, child-driven communication and mutual understanding.
 Overall, co-design insights from this session reinforced the value of tailoring robot behavior to both the social context and the emotional landscape of the interaction.
 
+\subsection{\textbf{Walkthrough with Elementary School Students}}\label{sec:elementary-school-walkthrough}
+\subsection*{\textbf{Setup and procedure}}
+A final round of pilot evaluations was conducted with two groups of elementary school students.
+The session used the same dashboard as the previous experiment with middle school children, with no additional changes applied.
+
+In the first session, six children (four girls and two boys) participated, forming three pairs.
+Five were from the fourth grade and one from the fifth.
+They sat on the floor in a shared space, with enough distance for the robot to move freely between them.
+Two groups were provided with full Lego sets and instruction booklets, while the third had a box of random bricks for free building.
+Children were not explicitly told that the robot was controlled via Wizard-of-Oz, although one of them eventually inferred it.
+
+In the second session, five boys from fifth grade participated in two groups (one pair and one trio).
+These children engaged almost entirely with the Lego building activity and showed minimal interest in the robot.
+
+\subsection*{\textbf{Key observations}}
+\begin{itemize}
+    \item In the first session the children, especially girls, interacted continuously with the robot, sometimes alternating building and robot engagement within the pair.
+    \item They perceived the robot as a peer or pet, naming it, assigning it a gender, and attempting to understand its feedback using binary yes/no questions.
+    \item The robot was used to deliver pieces, dispose of Lego bags, resolve disputes, and seek validation (e.g., "Do you like our build?").
+    \item Positive multimodal feedback (light + sound + movement) was perceived very well.
+    \item Children avoided causing conflict to not upset the robot, unless prompted to do so for demonstration.
+    \item The robot was often touched affectionately (e.g., pats, "hugs") and seen as having an "owner".
+    \item In contrast, children in the second session showed no novelty effect and treated the robot as a tool or servant.
+          They issued commands with no politeness, and often ignored the robot's signals.
+    \item They quickly identified the Wizard-of-Oz control and paid more attention to the operator than the robot.
+    \item In the final reflection, they mentioned that such a robot could be useful for helping children with special needs.
+\end{itemize}
+
+\subsection*{\textbf{Design implications}}
+The evident contrast between the two sessions reinforced prior findings about the robot's framing.
+Girls were highly prosocial, attributing autonomy and emotional depth to the robot, while the boys showed detachment and task focus.
+This highlighted the importance of context, group composition, and individual differences in shaping robot perception.
+These findings further validate the peer-like behavioral framing, multimodal expressiveness, and flexibility of the dashboard tools as essential features.
+The robot's potential role in mediating collaboration or supporting neurodiverse children was suggested as a promising direction for future inclusive design.
+
 \subsection{\textbf{Summary of Iterative Design Changes}}
 This section summarizes the key iterative changes that shaped both the dashboard interface and the robot's behavior across the three evaluation sessions.
 Each walkthrough revealed new user needs and inspired concrete refinements.
@@ -494,7 +535,7 @@ This thesis explored how the Learning by Teaching (LbT) paradigm can be instanti
 Positioned within the broader TESORO project, the work focused on both technical development and exploratory research.
 A web-based dashboard was designed and implemented to control a RoboMaster EP robot in a collaborative Lego-building task, enabling real-time interventions through multimodal feedback.
 
-Through three walkthrough studies involving HCI experts, high school students, and middle school children, we iteratively refined both the dashboard interface and the robot's behavior.
+Through four walkthrough studies involving HCI experts, high school students, middle school, and elementary school children, we iteratively refined both the dashboard interface and the robot's behavior.
 These sessions provided key insights into how children perceive and interact with social robots, especially when framed as teachable peers.
 The evaluation highlighted the importance of personalization, emotional attunement, and multimodal expressiveness in shaping engagement and understanding.
 
@@ -504,12 +545,17 @@ The findings demonstrate how interface co-design and behavioral framing can work
 The result is a dual contribution: a robust control interface for socially expressive robot operation, and a set of exploratory insights into child-led teaching dynamics.
 Together, they lay the foundation for future systems where children can not only be supported by social robots but also shape and teach their behavior in real time.
 
+The contrasting behaviors observed, particularly in the elementary school sessions, revealed how factors such as age, gender, and group composition shape engagement and perceptions of the robot.
+
 \subsection{\textbf{Future Work}}
 Future directions include extending the current Wizard-of-Oz setup toward partial autonomy, where the robot learns behavioral rules from child input across sessions.
 Integrating emotion recognition, contextual awareness, and personalization mechanisms would enable the robot to better align with the child's intentions and needs.
 
 Another promising direction involves expanding co-design with a broader range of users, particularly children with cognitive or communicative disabilities, in line with TESORO's inclusive vision.
 Long-term studies will also be necessary to assess whether repeated teaching interactions lead to meaningful changes in children's social skills, sense of agency, or emotional understanding.
+
+The contrasting behaviors observed in different age groups and between genders also open the door for targeted studies on how developmental stage and social norms influence child-robot interaction.
+Such research could inform the design of adaptive systems that adjust feedback strategies based on group composition or individual profiles.
 
 Technically, extending the dashboard to support on-device interfaces, real-time analytics, or adaptive feedback based on multimodal sensing could further bridge the gap between controlled experimentation and autonomous, socially intelligent behavior.
 
