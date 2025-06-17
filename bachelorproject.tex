@@ -21,7 +21,7 @@
 
 \begin{committee}
 %With more than 1 advisor an error is raised...: only 1 advisor is allowed!
-\advisor[Istituto Dalle Molle di Studi sull\'Intelligenza Artificiale, IDSIA, Switzerland]{Prof.}{Monica}{Landoni}
+\advisor[Istituto Dalle Molle di Studi sull\'Intelligenza Artificiale, IDSIA, Switzerland]{ }{Prof. Monica}{Landoni}
 %You can comment out  these lines if you don't have any assistant
 \coadvisor[Istituto Dalle Molle di Studi sull\'Intelligenza Artificiale, IDSIA, Switzerland]{ }{Antonio}{Paolillo}
 
@@ -55,7 +55,7 @@ This project is embedded within the broader TESORO initiative, a research effort
 While TESORO's long-term ambition is to develop adaptive and emotionally intelligent robots, this bachelor thesis contributes to its early-stage development by focusing on a Wizard-of-Oz setup: a human-controlled robot simulates behavior to test early interaction concepts and gather formative feedback.
 The effectiveness and practicality of the Wizard-of-Oz (WoZ) approach in HRI research have been well established in the literature~\cite{weiss2010userWOZ, rietz2021woz4uPepper, SCHOONDERWOERD2022102831}.
 
-While existing tools such as Foxglove~\cite{foxglove} or RViz~\cite{rviz2} offer powerful robotic control and visualization capabilities, they are designed primarily for technical debugging and telemetry inspection.
+While existing tools such as Foxglove~\cite{foxglove} or RViz2~\cite{rviz2} offer powerful robotic control and visualization capabilities, they are designed primarily for technical debugging and telemetry inspection.
 These platforms are not suited to educational or social interaction contexts, where real-time adaptability, intuitive use, and expressiveness are key.
 In contrast, the dashboard presented in this work was specifically co-designed for playful and socially attuned interaction with children.
 It prioritizes ease of use for non-technical operators (e.g., educators or researchers) and enables the delivery of nuanced, multimodal feedback during Learning by Teaching (LbT) scenarios.
@@ -252,7 +252,7 @@ The system was tested to ensure that the emergency stop reliably overrides all o
 \subsection{\textbf{Dashboard Interface}}
 
 The dashboard interface is the primary tool used to operate the robot during experiments.
-Its evolution was directly informed by iterative feedback from all three walkthroughs and was crucial in enabling flexible and socially responsive interventions.
+Its evolution was directly informed by iterative feedback from the first three walkthroughs and was crucial in enabling flexible and socially responsive interventions.
 The dashboard was developed using Next.js with Material UI (MUI) components, and it integrates with ROS2 through a combination of \texttt{roslibjs} and a custom middleware using \texttt{rclnodejs}.
 
 The final version of the interface (see Figure~\ref{fig:dashboard-v3-desc}) is structured into clear functional zones to streamline operator interaction and support rapid decision-making.
@@ -280,7 +280,7 @@ The result is a robust and extensible control panel capable of supporting both c
 \section{\textbf{Usage Research: Formative Evaluation and Iterative Co-Design}}\label{sec:evaluation}
 Formative evaluation is a method of assessing a system during its development, with the goal of identifying areas for improvement and guiding the design process from its earliest stages.
 In this project, formative evaluation was used as a continuous, participatory method to shape both the interface and the robot's behavioral patterns.
-By integrating insights from diverse stakeholders: experts, high school students, and middle school children, the system evolved through iterative feedback.
+By integrating insights from diverse stakeholders: experts, high school students, middle school, and elementary school children, the system evolved through iterative feedback.
 This approach enabled responsive design decisions and supported the co-creation of meaningful child-robot interaction scenarios.
 
 This section presents the evaluation of the system through four exploratory sessions, each structured as an iterative walkthrough.
@@ -424,12 +424,14 @@ Overall, co-design insights from this session reinforced the value of tailoring 
 A final round of pilot evaluations was conducted with two groups of elementary school students.
 The session used the same dashboard as the previous experiment with middle school children, with no additional changes applied.
 
+\subsubsection*{\textbf{Session A - Mixed-Gender Pairs (4th-5th Grade)}}
 In the first session, six children (four girls and two boys) participated, forming three pairs.
 Five were from the fourth grade and one from the fifth.
 They sat on the floor in a shared space, with enough distance for the robot to move freely between them.
 Two groups were provided with full Lego sets and instruction booklets, while the third had a box of random bricks for free building.
 Children were not explicitly told that the robot was controlled via Wizard-of-Oz, although one of them eventually inferred it.
 
+\subsubsection*{\textbf{Session B - All-Boy Groups (5th Grade)}}
 In the second session, five boys from fifth grade participated in two groups (one pair and one trio).
 These children engaged almost entirely with the Lego building activity and showed minimal interest in the robot.
 
@@ -455,7 +457,8 @@ These findings further validate the peer-like behavioral framing, multimodal exp
 The robot's potential role in mediating collaboration or supporting neurodiverse children was suggested as a promising direction for future inclusive design.
 
 \subsection{\textbf{Summary of Iterative Design Changes}}
-This section summarizes the key iterative changes that shaped both the dashboard interface and the robot's behavior across the three evaluation sessions.
+This section summarizes the key iterative changes that shaped both the dashboard interface and the robot's behavior across the first three evaluation sessions.
+The last walkthrough with elementary school children provided the final validation of these design choices, confirming their effectiveness in fostering engaging and socially meaningful interactions.
 Each walkthrough revealed new user needs and inspired concrete refinements.
 Interface updates were driven by usability and expressiveness goals, while behavioral adaptations emerged through co-design discussions and observational insights.
 Screenshots of the evolving interface are included to illustrate the progression from the initial prototype to the final deployed version.
@@ -505,24 +508,24 @@ Screenshots of the evolving interface are included to illustrate the progression
 
 Beyond interface adjustments, each walkthrough also shaped our understanding of effective robot behaviors in child-facing settings.
 
-Across the three walkthroughs, a consistent pattern emerged in how children and experts responded to the robot's behavior.
+Across the four walkthroughs, a consistent pattern emerged in how children and experts responded to the robot's behavior.
 Rather than detailing new robot actions, participants influenced the style, tone, and social framing of these actions, shifting the robot from an authority figure to a pet-like peer.
 This shift affected the design of feedback modalities (e.g., neutral negative feedback, celebratory positive feedback) and the narrative framing of the robot within the experiment.
 These reflections did not result in autonomous learning, but they directly shaped the robot's available actions and responses,
 expanding its behavioral repertoire and enabling the operator to deliver more socially aligned interventions.
-This iterative refinement represented one of the three core directions explored throughout the experiments and laid the groundwork for Step 3 of the study,
+This iterative refinement represented one of the core directions explored throughout the experiments and laid the groundwork for Step 3 of the study,
 where the robot begins to apply these socially informed behaviors in response to interaction cues.
 While still operator-driven, this stage anticipates future developments toward semi-autonomous behavior grounded in prior human-led interventions (see Section~\ref{sec:design}).
 \\
 Key insights included:
 \begin{itemize}
     \item \textbf{Framing of the Robot:} Children consistently perceived the robot as a playful companion or pet, rather than an authority figure.\\
-          This influenced design decisions toward peer-like, non-disciplinary behaviors. [Exp 1--3]
+          This influenced design decisions toward peer-like, non-disciplinary behaviors. [Exp 1--4]
     \item \textbf{Feedback Intensity:} Both experts and children emphasized the importance of scalable, multimodal feedback (e.g., lights + movement + sound), especially for positive interactions.\\
-          Negative feedback should remain neutral and minimal to avoid encouraging misbehavior. [Exp 1--3]
-    \item \textbf{Social Engagement:} Naming the robot, petting it, and attributing personality to it emerged naturally, suggesting personalization features may enhance engagement. [Exp 2--3]
+          Negative feedback should remain neutral and minimal to avoid encouraging misbehavior. [Exp 1--4]
+    \item \textbf{Social Engagement:} Naming the robot, petting it, and attributing personality to it emerged naturally, suggesting personalization features may enhance engagement. [Exp 2--4]
     \item \textbf{Learning by Teaching:} Children actively guided the robot using verbal and physical cues, validating the LbT framing.\\
-          Tasks like teaching the robot to maintain distance or follow polite commands proved intuitive and effective. [Exp 2--3]
+          Tasks like teaching the robot to maintain distance or follow polite commands proved intuitive and effective. [Exp 2--4]
     \item \textbf{Emotion and Context Awareness:} Middle school students suggested that robots should use emotional cues, facial expressions, and context to decide how and when to interact. [Exp 3]
 \end{itemize}
 
