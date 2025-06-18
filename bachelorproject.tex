@@ -30,7 +30,7 @@
 \abstract {
 Social robots are becoming increasingly prevalent in educational settings, offering new opportunities for collaborative learning and social skill development. 
 This project focuses on the design of tools to support the exploration of the Learning by Teaching paradigm, where children interact with a social robot to foster turn-taking and prosocial behavior. 
-As part of the TESORO project, we designed and evaluated a web-based dashboard that enables Wizard-of-Oz control of a RoboMaster EP robot in a Lego-building task with children. 
+As part of a collaborative initiative between USI and SUPSI that brings together human-computer interaction and robotics, we designed and evaluated a web-based dashboard that enables Wizard-of-Oz control of a RoboMaster EP robot in a Lego-building task with children. 
 The robot intervenes to regulate turn-taking and is perceived as a peer-like entity rather than an authority figure. 
 We conducted four formative, iterative experiments involving human-computer interaction experts, high school students, middle school, and elementary school children, highlighting contrasting engagement patterns across age and gender, leading to refinements in the robot's behavior and the dashboard interface to be used in future such studies. 
 Our findings highlight the importance of multimodal feedback, personalization, and emotional awareness in child-robot interaction. 
@@ -69,8 +69,8 @@ This project explores this question through the lens of the Learning by Teaching
 This approach has been studied in both educational software and robotics contexts~\cite{biswas2005learning, 10.5898/JHRI.1.1.Tanaka}.
 In this context, the robot is not simply a reactive tool but a teachable partner embedded in a collaborative play scenario.
 
-This project is embedded within the broader TESORO initiative, a research effort aiming to co-design accessible social robots that foster mutual learning experiences with children, including those with intellectual disabilities~\cite{landoni2025tesoro}.
-While TESORO's long-term ambition is to develop adaptive and emotionally intelligent robots, this bachelor thesis contributes to its early-stage development by focusing on a Wizard-of-Oz (WoZ) setup: a human-controlled robot simulates behavior to test early interaction concepts and gather formative feedback.
+This thesis contributes to a broader collaborative effort between USI and SUPSI, aiming to co-design accessible social robots that foster mutual learning experiences with children, including those with intellectual disabilities.
+While the long-term vision involves developing adaptive and emotionally intelligent robots, this bachelor thesis contributes to its early-stage development by focusing on a Wizard-of-Oz (WoZ) setup: a human-controlled robot simulates behavior to test early interaction concepts and gather formative feedback.
 The effectiveness and practicality of the WoZ approach in Human-Robot Interaction (HRI) research have been well established in the literature~\cite{weiss2010userWOZ, rietz2021woz4uPepper, SCHOONDERWOERD2022102831}.
 
 While existing tools such as Foxglove~\cite{foxglove} or RViz2~\cite{rviz2} offer powerful robotic control and visualization capabilities, they are designed primarily for technical debugging and telemetry inspection.
@@ -117,8 +117,8 @@ They require technical expertise and offer limited support for multimodal, conte
 Our work addresses this shortcoming through the development of a web-based dashboard designed explicitly for expressive, real-time robot control in educational settings.
 The dashboard was iteratively co-designed with researchers and children to meet the demands of playful and socially responsive interactions.
 
-This contribution aligns with the goals of the broader TESORO project~\cite{landoni2025tesoro}, which envisions accessible, emotionally intelligent robots that foster mutual learning, especially for children with intellectual disabilities.
-TESORO promotes the idea that social robots should not only guide behavior but also learn from the child, turning the robot into a reflective tool for self-regulation and emotional awareness.
+This contribution aligns with the goals of the broader collaborative initiative, which envisions accessible, emotionally intelligent robots that foster mutual learning experiences, especially for children with intellectual disabilities.
+It promotes the idea that social robots should not only guide behavior but also learn from the child, becoming reflective tools for self-regulation and emotional awareness.
 
 Co-design and participatory methods have gained traction in child-robot interaction research, affirming that children are more engaged when they can personalize or influence a robot's behavior~\cite{osti_10386132, rose2019participatory}.
 Such methods empower children and ensure that social robot designs are inclusive and developmentally appropriate.
@@ -143,7 +143,7 @@ It is part of the Usage Research necessary to drive the design of effective chil
 
 \subsection*{\textbf{Motivation and Context}}
 The experiment was designed to investigate how children can teach a robot socially appropriate behaviors in a collaborative, rule-based play scenario.
-Within the TESORO project, this experiment serves as a preliminary study to simulate the LbT dynamic, with the robot acting as both a participant and a teachable agent.
+Within the overall research effort, this experiment serves as a preliminary study to simulate the LbT dynamic, with the robot acting as both a participant and a teachable agent.
 
 \subsection*{\textbf{Research Objectives}}
 The primary goals of the experiment are:
@@ -171,10 +171,6 @@ The experiment was structured in three progressive phases, each enabling the tea
 A key component of the experiment is the web-based dashboard used to remotely control the robot in real time.
 The interface was iteratively developed to support both reactive and expressive robot behaviors based on child feedback.
 
-\subsection*{\textbf{TESORO Alignment}}
-This experiment aligns with the TESORO project's longer-term vision of developing socially intelligent robots that can learn from children in real-time.
-The insights gathered here lay the groundwork for future autonomous learning systems that better reflect children's expectations and communication styles.
-
 \section{\textbf{System Design and Implementation}}\label{sec:system}
 
 \subsection{\textbf{System Architecture}}
@@ -183,7 +179,7 @@ The system architecture was designed to enable an operator to control a social r
 The main components include a web-based dashboard for real-time control~\cite{frovaaa2025hogwarts}, a communication layer based on Robot Operating System 2 (ROS2)~\cite{ros2, frovaaa2025robomaster, frovaaa2025robomasterhri}, and the RoboMaster EP robot~\cite{djirobomasterep}.
 The dashboard provides intuitive controls for triggering robot interventions and monitoring status, while the ROS2 integration ensures reliable communication and execution of commands.
 This architecture prioritizes usability, low latency, and safety, supporting the experimental requirements for responsive and effective interactions.
-The system was designed to facilitate iterative development and easy modifications, supporting a co-design approach as outlined in the TESORO project proposal~\cite{landoni2025tesoro}.
+The system was designed to facilitate iterative development and easy modifications, supporting a co-design approach guided by formative feedback from diverse stakeholders.
 This flexibility enables rapid adaptation of the dashboard based on feedback from stakeholders and participants during the study.
 
 \subsection{\textbf{Component Description}}
@@ -553,7 +549,7 @@ These behavioral reflections informed the structure of robot actions available t
 
 \section{\textbf{Conclusions}}\label{sec:conclusions}
 This thesis explored how the Learning by Teaching paradigm can be instantiated in child-robot interaction using a Wizard-of-Oz setup.
-Positioned within the broader TESORO project, the work focused on both technical development and exploratory research.
+Within the context of ongoing collaborative work between USI and SUPSI, the project focused on both technical development and exploratory research.
 A web-based dashboard was designed and implemented to control a RoboMaster EP robot in a collaborative Lego-building task, enabling real-time interventions through multimodal feedback.
 
 Through four walkthrough studies involving HCI experts, high school students, middle school, and elementary school children, we iteratively refined both the dashboard interface and the robot's behavior.
@@ -572,7 +568,7 @@ The contrasting behaviors observed, particularly in the elementary school sessio
 Future directions include extending the current Wizard-of-Oz setup toward partial autonomy, where the robot learns behavioral rules from child input across sessions.
 Integrating emotion recognition, contextual awareness, and personalization mechanisms would enable the robot to better align with the child's intentions and needs.
 
-Another promising direction involves expanding co-design with a broader range of users, particularly children with cognitive or communicative disabilities, in line with TESORO's inclusive vision.
+Another promising direction involves expanding co-design with a broader range of users, particularly children with cognitive or communicative disabilities, to ensure inclusivity and adaptability.
 Long-term studies will also be necessary to assess whether repeated teaching interactions lead to meaningful changes in children's social skills, sense of agency, or emotional understanding.
 
 The contrasting behaviors observed in different age groups and between genders also open the door for targeted studies on how developmental stage and social norms influence child-robot interaction.
