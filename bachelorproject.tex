@@ -23,16 +23,16 @@
 %With more than 1 advisor an error is raised...: only 1 advisor is allowed!
 \advisor[Istituto Dalle Molle di Studi sull\'Intelligenza Artificiale, IDSIA, Switzerland]{ }{Prof. Monica}{Landoni}
 %You can comment out  these lines if you don't have any assistant
-\coadvisor[Istituto Dalle Molle di Studi sull\'Intelligenza Artificiale, IDSIA, Switzerland]{ }{Senior Researcher Antonio}{Paolillo}
+\coadvisor[Istituto Dalle Molle di Studi sull\'Intelligenza Artificiale, IDSIA, Switzerland]{ }{Dr. Antonio}{Paolillo}
 
 \end{committee}
 
 \abstract {
 Social robots are becoming increasingly prevalent in educational settings, offering new opportunities for collaborative learning and social skill development. 
-This project focuses on the design of tools to support the exploration of the Learning by Teaching (LbT) paradigm, where children interact with a social robot to foster turn-taking and prosocial behavior. 
+This project focuses on the design of tools to support the exploration of the Learning by Teaching paradigm, where children interact with a social robot to foster turn-taking and prosocial behavior. 
 As part of the TESORO project, we designed and evaluated a web-based dashboard that enables Wizard-of-Oz control of a RoboMaster EP robot in a Lego-building task with children. 
 The robot intervenes to regulate turn-taking and is perceived as a peer-like entity rather than an authority figure. 
-We conducted four formative, iterative experiments involving HCI experts, high school students, middle school, and elementary school children, highlighting contrasting engagement patterns across age and gender, leading to refinements in the robot's behavior and the dashboard interface to be used in future such studies. 
+We conducted four formative, iterative experiments involving human-computer interaction experts, high school students, middle school, and elementary school children, highlighting contrasting engagement patterns across age and gender, leading to refinements in the robot's behavior and the dashboard interface to be used in future such studies. 
 Our findings highlight the importance of multimodal feedback, personalization, and emotional awareness in child-robot interaction. 
 The study provides a foundation for future semi-autonomous robot behavior and real-time learning from children's regulatory input.
 
@@ -44,7 +44,7 @@ The study provides a foundation for future semi-autonomous robot behavior and re
 
 \section*{Acknowledgments}
 
-I would like to thank my advisors, Prof. Monica Landoni and Senior Researcher Antonio Paolillo, for their invaluable guidance and the opportunity to work on a project that brought together two of my greatest passions: robotics and teaching children.
+I would like to thank my advisors, Prof. Monica Landoni and Dr. Antonio Paolillo, for their invaluable guidance and the opportunity to work on a project that brought together two of my greatest passions: robotics and teaching children.
 
 I am grateful for the collaborative environment fostered by the institutions involved, and for the chance to work on a project that combined both educational and technical dimensions.
 
@@ -53,8 +53,7 @@ Special thanks to the children, teachers, and researchers who participated in th
 
 Also, really special and heartfelt thanks to all of my friends, who were so much more than just university colleagues.
 Their presence transformed every moment into something more meaningful, creating a safe and uplifting environment where I could truly grow.
-They were always there, not just to support me, but also to patiently endure my worst moments, and for that, I am deeply grateful.
--especially when gifting me the best cookies I have ever tasted.
+They were always there, not just to support me, but also to patiently endure my worst moments, and for that, I am deeply grateful - especially when gifting me the best cookies I have ever tasted.
 
 I also wish to thank my mother, whose unwavering support has been a constant source of strength throughout my life.
 She has always encouraged me to follow my passions, believed in me even during the toughest times, and inspired me to pursue what I love with determination and joy.
@@ -68,19 +67,19 @@ She has always encouraged me to follow my passions, believed in me even during t
 How can we design social robots that help children develop prosocial skills, like turn-taking, while also learning from the children themselves?
 This project explores this question through the lens of the Learning by Teaching (LbT) paradigm, an approach where learners consolidate their understanding by teaching others.
 This approach has been studied in both educational software and robotics contexts~\cite{biswas2005learning, 10.5898/JHRI.1.1.Tanaka}.
-In this context, the robot is not merely a passive tool but a teachable partner embedded in a collaborative play scenario.
+In this context, the robot is not simply a reactive tool but a teachable partner embedded in a collaborative play scenario.
 
 This project is embedded within the broader TESORO initiative, a research effort aiming to co-design accessible social robots that foster mutual learning experiences with children, including those with intellectual disabilities~\cite{landoni2025tesoro}.
-While TESORO's long-term ambition is to develop adaptive and emotionally intelligent robots, this bachelor thesis contributes to its early-stage development by focusing on a Wizard-of-Oz setup: a human-controlled robot simulates behavior to test early interaction concepts and gather formative feedback.
-The effectiveness and practicality of the Wizard-of-Oz (WoZ) approach in HRI research have been well established in the literature~\cite{weiss2010userWOZ, rietz2021woz4uPepper, SCHOONDERWOERD2022102831}.
+While TESORO's long-term ambition is to develop adaptive and emotionally intelligent robots, this bachelor thesis contributes to its early-stage development by focusing on a Wizard-of-Oz (WoZ) setup: a human-controlled robot simulates behavior to test early interaction concepts and gather formative feedback.
+The effectiveness and practicality of the WoZ approach in Human-Robot Interaction (HRI) research have been well established in the literature~\cite{weiss2010userWOZ, rietz2021woz4uPepper, SCHOONDERWOERD2022102831}.
 
 While existing tools such as Foxglove~\cite{foxglove} or RViz2~\cite{rviz2} offer powerful robotic control and visualization capabilities, they are designed primarily for technical debugging and telemetry inspection.
 These platforms are not suited to educational or social interaction contexts, where real-time adaptability, intuitive use, and expressiveness are key.
 In contrast, the dashboard presented in this work was specifically co-designed for playful and socially attuned interaction with children.
-It prioritizes ease of use for non-technical operators (e.g., educators or researchers) and enables the delivery of nuanced, multimodal feedback during Learning by Teaching (LbT) scenarios.
+It prioritizes ease of use for non-technical operators (e.g., educators or researchers) and enables the delivery of nuanced, multimodal feedback during LbT scenarios.
 These limitations are especially apparent in scenarios involving young children, where co-design and accessibility play a critical role~\cite{osti_10386132, rose2019participatory}.
 
-This thesis presents a dual contribution: the development of a web-based dashboard for Wizard-of-Oz control of a social robot, and an exploratory initial investigation into how children perceive, interact with, and teach the robot in collaborative play scenarios.
+This thesis presents a dual contribution: the development of a web-based dashboard for WoZ control of a social robot, and an exploratory initial investigation into how children perceive, interact with, and teach the robot in collaborative play scenarios.
 These two strands evolved in parallel and informed each other throughout the project.
 The dashboard's design was refined iteratively through hands-on formative evaluation sessions, while these same sessions served as a space to initially explore children's social expectations, feedback preferences, and engagement strategies.
 This methodology reflects a formative evaluation approach commonly used in HRI to iteratively adapt both behavior and interaction design~\cite{love2024teachable}.
@@ -102,14 +101,14 @@ and Section~\ref{sec:conclusions} concludes with future directions.
 
 \section{\textbf{State of the Art}}\label{sec:background}
 The integration of social robots in educational contexts has evolved significantly over the past two decades, moving from structured teaching tools to more dynamic, participatory agents capable of engaging in mutual learning with children.
-One promising paradigm in this space is \textit{Learning by Teaching (LbT)}, which posits that learners consolidate their own understanding by teaching others~\cite{biswas2005learning}.
-In Human-Robot Interaction (HRI), LbT has proven effective at increasing both engagement and educational outcomes~\cite{10.5898/JHRI.1.1.Tanaka, love2024teachable}.
+One promising paradigm in this space is Learning by Teaching, which posits that learners consolidate their own understanding by teaching others~\cite{biswas2005learning}.
+In Human-Robot Interaction, LbT has proven effective at increasing both engagement and educational outcomes~\cite{10.5898/JHRI.1.1.Tanaka, love2024teachable}.
 
 Multiple systems have explored teachable robots in child-centered scenarios.
 Tanaka and Matsuzoe~\cite{10.5898/JHRI.1.1.Tanaka} showed how children teaching a NAO~\cite{nao_robot} robot led to improved vocabulary learning, while Love et al.~\cite{love2023adapting, love2024teachable} developed reinforcement learning mechanisms to adapt dialog and sustain engagement.
 These systems highlight the benefits of positioning the robot as a learner rather than a teacher, shifting power dynamics and empowering the child.
 
-While promising, these approaches often begin with exploratory setups grounded in the Wizard-of-Oz (WoZ) methodology, where a human simulates robot behavior to evaluate interaction strategies before full autonomy is developed~\cite{weiss2010userWOZ, rietz2021woz4uPepper, SCHOONDERWOERD2022102831}.
+While promising, these approaches often begin with exploratory setups grounded in the Wizard-of-Oz methodology, where a human simulates robot behavior to evaluate interaction strategies before full autonomy is developed~\cite{weiss2010userWOZ, rietz2021woz4uPepper, SCHOONDERWOERD2022102831}.
 Tools like WoZ4U~\cite{rietz2021woz4uPepper} are effective for humanoid robots like Pepper~\cite{pepper_robot} but are tightly coupled to specific hardware and are not optimized for more mobile, non-humanoid platforms like the RoboMaster EP.
 This highlights a technical gap in flexible, child-facing WoZ systems that support socially attuned feedback and intuitive control.
 
@@ -118,7 +117,7 @@ They require technical expertise and offer limited support for multimodal, conte
 Our work addresses this shortcoming through the development of a web-based dashboard designed explicitly for expressive, real-time robot control in educational settings.
 The dashboard was iteratively co-designed with researchers and children to meet the demands of playful and socially responsive interactions.
 
-This contribution aligns with the goals of the broader \textit{TESORO} project~\cite{landoni2025tesoro}, which envisions accessible, emotionally intelligent robots that foster mutual learning, especially for children with intellectual disabilities.
+This contribution aligns with the goals of the broader TESORO project~\cite{landoni2025tesoro}, which envisions accessible, emotionally intelligent robots that foster mutual learning, especially for children with intellectual disabilities.
 TESORO promotes the idea that social robots should not only guide behavior but also learn from the child, turning the robot into a reflective tool for self-regulation and emotional awareness.
 
 Co-design and participatory methods have gained traction in child-robot interaction research, affirming that children are more engaged when they can personalize or influence a robot's behavior~\cite{osti_10386132, rose2019participatory}.
@@ -129,7 +128,7 @@ While not focused on children, the findings underline that proactive behaviors, 
 These insights are highly relevant to child-robot interaction design, where responsiveness and perceived helpfulness also shape engagement and acceptance.
 
 Our work contributes to this growing body of research by integrating:
-(1) an expressive and adaptable control interface for WoZ experimentation,
+(1) an expressive and adaptable control interface for Wizard-of-Oz experimentation,
 (2) a structured yet flexible study scenario centered on Learning by Teaching, and
 (3) an exploratory methodology that surfaces how children engage with, perceive, and guide robot behavior.
 
@@ -140,7 +139,7 @@ It lays essential groundwork for future investigations into semi-autonomous syst
 \section{\textbf{Experiment Design and Goals}}\label{sec:design}
 
 The experiment designed for this project aims to explore how a social robot can support children's learning through turn-taking regulation.
-It is part of the Usage Research necessary to drive the design of effective child-robot interactions that support the Learning by Teaching (LbT) paradigm.
+It is part of the Usage Research necessary to drive the design of effective child-robot interactions that support the Learning by Teaching paradigm.
 
 \subsection*{\textbf{Motivation and Context}}
 The experiment was designed to investigate how children can teach a robot socially appropriate behaviors in a collaborative, rule-based play scenario.
@@ -181,7 +180,7 @@ The insights gathered here lay the groundwork for future autonomous learning sys
 \subsection{\textbf{System Architecture}}
 \subsection*{\textbf{Overview}}
 The system architecture was designed to enable an operator to control a social robot in a Wizard-of-Oz fashion during experiments with children.
-The main components include a web-based dashboard for real-time control~\cite{frovaaa2025hogwarts}, a communication layer based on ROS2 (Robot Operating System 2)~\cite{ros2, frovaaa2025robomaster, frovaaa2025robomasterhri}, and the RoboMaster EP robot~\cite{djirobomasterep}.
+The main components include a web-based dashboard for real-time control~\cite{frovaaa2025hogwarts}, a communication layer based on Robot Operating System 2 (ROS2)~\cite{ros2, frovaaa2025robomaster, frovaaa2025robomasterhri}, and the RoboMaster EP robot~\cite{djirobomasterep}.
 The dashboard provides intuitive controls for triggering robot interventions and monitoring status, while the ROS2 integration ensures reliable communication and execution of commands.
 This architecture prioritizes usability, low latency, and safety, supporting the experimental requirements for responsive and effective interactions.
 The system was designed to facilitate iterative development and easy modifications, supporting a co-design approach as outlined in the TESORO project proposal~\cite{landoni2025tesoro}.
@@ -190,7 +189,7 @@ This flexibility enables rapid adaptation of the dashboard based on feedback fro
 \subsection{\textbf{Component Description}}
 \subsubsection*{\textbf{Dashboard}}
 The dashboard is a web-based interface developed using Next.js, with the user interface built on Material UI (MUI) components for a modern and consistent look.
-It allows the operator to monitor the robot's status and trigger interventions in real time. Communication with the robot is achieved via \texttt{roslibjs}~\cite{roslibjs}, which enables the dashboard to send and receive ROS messages over the network.
+It allows the operator to monitor the robot's status and trigger interventions in real time. Communication with the robot is achieved via \texttt{roslibjs}~\cite{roslibjs}, which enables the dashboard to send and receive ROS2 messages over the network.
 
 \subsubsection*{\textbf{Middleware Server}}
 Due to a known limitation in \texttt{roslibjs} when interacting with ROS2 action servers, a minimal middleware server was implemented within the dashboard system.
@@ -272,7 +271,7 @@ The system was tested to ensure that the emergency stop reliably overrides all o
 
 The dashboard interface is the primary tool used to operate the robot during experiments.
 Its evolution was directly informed by iterative feedback from the first three walkthroughs and was crucial in enabling flexible and socially responsive interventions.
-The dashboard was developed using Next.js with Material UI (MUI) components, and it integrates with ROS2 through a combination of \texttt{roslibjs} and a custom middleware using \texttt{rclnodejs}.
+The dashboard was developed using Next.js with Material UI components, and it integrates with ROS2 through a combination of \texttt{roslibjs} and a custom middleware using \texttt{rclnodejs}.
 
 The final version of the interface (see Figure~\ref{fig:dashboard-v3-desc}) is structured into clear functional zones to streamline operator interaction and support rapid decision-making.
 Key components include:
@@ -307,7 +306,7 @@ These sessions aimed to assess the usability and flexibility of the dashboard, u
 Each evaluation contributed to the co-design process by revealing user needs and contextual challenges in real time.
 
 The sessions included:
-(1) a walkthrough with HCI and accessibility experts,
+(1) a walkthrough with Human-Computer Interaction (HCI) and accessibility experts,
 (2) a session with high school students,
 (3) a pilot study with middle school children, and
 (4) a final pilot with elementary school children, examining how younger age and group composition influence robot perception.
@@ -317,12 +316,12 @@ The following subsections describe the setup, key observations, and design impli
 
 \subsection{\textbf{Walkthrough with Experts}}\label{sec:expert-walkthrough}
 \subsection*{\textbf{Setup and procedure}}
-The first evaluation session was conducted in an office setting and involved two PhD researchers with expertise in Human-Computer Interaction (HCI) and accessibility.
+The first evaluation session was conducted in an office setting and involved two PhD researchers with expertise in HCI and accessibility.
 They were asked to role-play as two children collaborating on a Lego tower building task.
 Initially, they were seated on the floor approximately one meter apart, with the RoboMaster EP robot placed slightly in front of them at the midpoint of this distance, not directly between them.
 
 The system was operated by an evaluator seated nearby at a desk, with a direct line of sight to the play zone.
-A third researcher took notes throughout the session, while two additional observers with expertise in educational technology and human-robot interaction silently monitored the interaction and its outcomes.
+A third researcher took notes throughout the session, while two additional observers with expertise in educational technology and HRI silently monitored the interaction and its outcomes.
 
 Although the scenario was designed around pre-defined robot positions, the participants quickly moved from their initial spots, rendering the static positions ineffective.
 However, the dashboard's joystick feature enabled the operator to adapt in real time by manually repositioning the robot and triggering actions.
@@ -359,7 +358,7 @@ The second evaluation session was conducted in a spacious conference room.
 A large children's floor mat was added to define a playful zone, following recommendations from the first experiment.
 The robot used the updated Version 2 of the dashboard interface, which incorporated changes such as feedback intensity levels and different LED color options.
 
-The session involved four high school students, divided into two pairs.
+The session involved four female high school students, divided into two pairs.
 Each pair was asked to role-play as younger children (elementary or middle school age) participating in a turn-taking Lego activity.
 The robot was operated by an evaluator from a nearby desk.
 Before the session began, the robot was introduced to the participants to reduce initial distraction, another refinement based on the previous walkthrough.
@@ -462,7 +461,7 @@ These children engaged almost entirely with the Lego building activity and showe
     \item Positive multimodal feedback (light + sound + movement) was perceived very well.
     \item Children avoided causing conflict to not upset the robot, unless prompted to do so for demonstration.
     \item The robot was often touched affectionately (e.g., pats, "hugs") and seen as having an "owner".
-    \item In contrast, children in the second session showed no novelty effect and treated the robot as a tool or servant.
+    \item In contrast, no novelty effect was observed among the children in the second session who treated the robot as a tool or servant.
           They issued commands with no politeness, and often ignored the robot's signals.
     \item They quickly identified the Wizard-of-Oz control and paid more attention to the operator than the robot.
     \item In the final reflection, they mentioned that such a robot could be useful for helping children with special needs.
@@ -470,7 +469,7 @@ These children engaged almost entirely with the Lego building activity and showe
 
 \subsection*{\textbf{Design implications}}
 The evident contrast between the two sessions reinforced prior findings about the robot's framing.
-Girls were highly prosocial, attributing autonomy and emotional depth to the robot, while the boys showed detachment and task focus.
+Girls were highly prosocial, attributing autonomy and emotional depth to the robot, while boys showed detachment and a strong focus on the task.
 This highlighted the importance of context, group composition, and individual differences in shaping robot perception.
 These findings further validate the peer-like behavioral framing, multimodal expressiveness, and flexibility of the dashboard tools as essential features.
 The robot's potential role in mediating collaboration or supporting neurodiverse children was suggested as a promising direction for future inclusive design.
@@ -519,7 +518,7 @@ Screenshots of the evolving interface are included to illustrate the progression
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/dashboard_v3.png}
-    \caption{Version 3 - Final dashboard interface used in the pilot experiment.}
+    \caption{Version 3 - Final dashboard interface used in the pilot experiments.}
     \label{fig:dashboard-v3}
 \end{figure}
 
@@ -553,7 +552,7 @@ These behavioral reflections informed the structure of robot actions available t
 \newpage
 
 \section{\textbf{Conclusions}}\label{sec:conclusions}
-This thesis explored how the Learning by Teaching (LbT) paradigm can be instantiated in child-robot interaction using a Wizard-of-Oz setup.
+This thesis explored how the Learning by Teaching paradigm can be instantiated in child-robot interaction using a Wizard-of-Oz setup.
 Positioned within the broader TESORO project, the work focused on both technical development and exploratory research.
 A web-based dashboard was designed and implemented to control a RoboMaster EP robot in a collaborative Lego-building task, enabling real-time interventions through multimodal feedback.
 
@@ -579,7 +578,8 @@ Long-term studies will also be necessary to assess whether repeated teaching int
 The contrasting behaviors observed in different age groups and between genders also open the door for targeted studies on how developmental stage and social norms influence child-robot interaction.
 Such research could inform the design of adaptive systems that adjust feedback strategies based on group composition or individual profiles.
 
-Technically, extending the dashboard to support on-device interfaces, real-time analytics, or adaptive feedback based on multimodal sensing could further bridge the gap between controlled experimentation and autonomous, socially intelligent behavior.
+Technically, a key contribution of this thesis lies in the development of a flexible dashboard for real-time robot control.
+Extending this dashboard to support on-device interfaces, real-time analytics, and adaptive feedback based on multimodal sensing would build directly on this foundation, helping bridge the gap between controlled experimentation and autonomous, socially intelligent behavior.
 
 Ultimately, this thesis aims to serve as a stepping stone toward socially attuned robots that are not only tools for teaching but also active participants in co-constructed learning experiences with children.
 
