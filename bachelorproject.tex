@@ -35,7 +35,8 @@ The robot intervenes to regulate turn-taking and is perceived as a peer-like ent
 We conducted four formative, iterative experiments involving human-computer interaction experts, high school students, middle school, and elementary school children, highlighting contrasting engagement patterns across age and gender, leading to refinements in the robot's behavior and the dashboard interface to be used in future such studies. 
 Our findings highlight the importance of multimodal feedback, personalization, and emotional awareness in child-robot interaction. 
 The study provides a foundation for future semi-autonomous robot behavior and real-time learning from children's regulatory input.
-
+\\
+\\
 \textbf{Keywords}: Social robots; Learning by Teaching; Human-Robot Interaction; Wizard-of-Oz; Formative Evaluation; Child-Computer Interaction.
 }
 
@@ -175,8 +176,14 @@ The interface was iteratively developed to support both reactive and expressive 
 
 \subsection{\textbf{System Architecture}}
 \subsection*{\textbf{Overview}}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{figures/robot_closeup.jpg}
+    \caption{The RoboMaster EP robot used in the experiments. Its form factor and expressive elements (e.g., gripper, LEDs, motion) made it suitable for playful, peer-like interactions with children.}
+    \label{fig:robot-closeup}
+\end{figure}
 The system architecture was designed to enable an operator to control a social robot in a Wizard-of-Oz fashion during experiments with children.
-The main components include a web-based dashboard for real-time control~\cite{frovaaa2025hogwarts}, a communication layer based on Robot Operating System 2 (ROS2)~\cite{ros2, frovaaa2025robomaster, frovaaa2025robomasterhri}, and the RoboMaster EP robot~\cite{djirobomasterep}.
+The main components include a web-based dashboard for real-time control~\cite{frovaaa2025hogwarts}, a communication layer based on Robot Operating System 2 (ROS2)~\cite{ros2, frovaaa2025robomaster, frovaaa2025robomasterhri}, and the RoboMaster EP robot (Figure~\ref{fig:robot-closeup})~\cite{djirobomasterep}.
 The dashboard provides intuitive controls for triggering robot interventions and monitoring status, while the ROS2 integration ensures reliable communication and execution of commands.
 This architecture prioritizes usability, low latency, and safety, supporting the experimental requirements for responsive and effective interactions.
 The system was designed to facilitate iterative development and easy modifications, supporting a co-design approach guided by formative feedback from diverse stakeholders.
